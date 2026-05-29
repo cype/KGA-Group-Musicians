@@ -1,18 +1,229 @@
 @prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd:   <http://www.wikidata.org/entity/> .
 
-musicians:Genres a skos:ConceptScheme ;
-    skos:prefLabel "Music Genres"@en ;
-    skos:definition "A classification of music into various genres based on style, form, and cultural context."@en ;
-    skos:hasTopConcept musicians:Pop ;
+musicians:Music a skos:ConceptScheme ;
+    skos:prefLabel "Music"@en ;
+    skos:scopeNote "we used ChatGPT"@en ;
+    skos:hasTopConcept
+        musicians:Pop,
+        musicians:Rock,
+        musicians:HipHop,
+        musicians:Jazz,
+        musicians:Blues,
+        musicians:Classical,
+        musicians:Country,
+        musicians:Reggae,
+        musicians:Metal,
+        musicians:Folk .
 
 musicians:Pop a skos:Concept ;
     skos:prefLabel "Pop"@en ;
-    skos:definition "A genre of popular music that originated in the mid-1950s, characterized by a strong rhythm and simple melodies."@en ;
-    skos:topConceptOf musicians:Genres ;
+    skos:definition "Catchy, mainstream music focused on strong melodies and broad appeal."@en ;
+    skos:exactMatch wd:Q37073 ;
+    skos:topConceptOf musicians:Music ;
     skos:narrower musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
 
 musicians:Synthpop a skos:Concept ;
     skos:prefLabel "Synthpop"@en ;
-    skos:definition "A genre of music that uses synthesizers as the dominant musical instrument, often associated with the 1980s."@en ;
+    skos:definition "Pop music heavily influenced by synthesizers and electronic sounds."@en ;
     skos:broader musicians:Pop ;
+    skos:narrower
+        musicians:NewWaveSynthpop,
+        musicians:DarkSynthpop,
+        musicians:Electropop,
+        musicians:Futurepop,
+        musicians:MinimalSynth,
+        musicians:Coldwave,
+        musicians:Synthwave,
+        musicians:IndustrialSynthpop,
+        musicians:DreamPopSynth,
+        musicians:DancePopSynth ;
+    skos:scopeNote "we used ChatGPT"@en .
 
+musicians:NewWaveSynthpop a skos:Concept ;
+    skos:prefLabel "New Wave Synthpop"@en ;
+    skos:definition "Combines synth-driven melodies with the energy and style of new wave music."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:DarkSynthpop a skos:Concept ;
+    skos:prefLabel "Dark Synthpop"@en ;
+    skos:definition "Features darker themes, atmospheric sounds, and melancholic melodies."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Electropop a skos:Concept ;
+    skos:prefLabel "Electropop"@en ;
+    skos:definition "A polished, dance-oriented style that emphasizes catchy electronic hooks."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Futurepop a skos:Concept ;
+    skos:prefLabel "Futurepop"@en ;
+    skos:definition "Blends synthpop with trance and EBM influences, creating an uplifting electronic sound."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:MinimalSynth a skos:Concept ;
+    skos:prefLabel "Minimal Synth"@en ;
+    skos:definition "Uses stripped-down arrangements, vintage synthesizers, and minimalist production."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Coldwave a skos:Concept ;
+    skos:prefLabel "Coldwave"@en ;
+    skos:definition "A moody and atmospheric European style characterized by cold, detached vocals and synth textures."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Synthwave a skos:Concept ;
+    skos:prefLabel "Synthwave"@en ;
+    skos:definition "Inspired by 1980s synthpop, film soundtracks, and retro-futuristic aesthetics."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:IndustrialSynthpop a skos:Concept ;
+    skos:prefLabel "Industrial Synthpop"@en ;
+    skos:definition "Combines melodic synthpop structures with harsher industrial sounds and rhythms."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:DreamPopSynth a skos:Concept ;
+    skos:prefLabel "Dream Pop Synth"@en ;
+    skos:definition "Mixes synthpop elements with ethereal vocals and lush, dreamy soundscapes."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:DancePopSynth a skos:Concept ;
+    skos:prefLabel "Dance-Pop Synth"@en ;
+    skos:definition "Focuses on upbeat rhythms, accessible melodies, and club-friendly production."@en ;
+    skos:broader musicians:Synthpop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Rock a skos:Concept ;
+    skos:prefLabel "Rock"@en ;
+    skos:definition "Guitar-driven music known for its energy, rhythm, and diverse styles."@en ;
+    skos:exactMatch wd:Q11399 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:AlternativeRock ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:AlternativeRock a skos:Concept ;
+    skos:prefLabel "Alternative Rock"@en ;
+    skos:definition "Rock music that explores experimental and non-mainstream approaches."@en ;
+    skos:broader musicians:Rock ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:HipHop a skos:Concept ;
+    skos:prefLabel "Hip Hop"@en ;
+    skos:definition "A genre centered on rap vocals, beats, rhythm, and lyrical expression."@en ;
+    skos:exactMatch wd:Q11401 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:Trap ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Trap a skos:Concept ;
+    skos:prefLabel "Trap"@en ;
+    skos:definition "A modern hip hop style featuring heavy bass, hi-hats, and atmospheric beats."@en ;
+    skos:broader musicians:HipHop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Jazz a skos:Concept ;
+    skos:prefLabel "Jazz"@en ;
+    skos:definition "Improvisational music featuring complex harmonies and instrumental creativity."@en ;
+    skos:exactMatch wd:Q8341 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:Bebop ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Bebop a skos:Concept ;
+    skos:prefLabel "Bebop"@en ;
+    skos:definition "Fast-paced jazz known for complex improvisation and intricate melodies."@en ;
+    skos:broader musicians:Jazz ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Blues a skos:Concept ;
+    skos:prefLabel "Blues"@en ;
+    skos:definition "Emotional music characterized by expressive vocals and distinctive chord progressions."@en ;
+    skos:exactMatch wd:Q9759 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:DeltaBlues ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:DeltaBlues a skos:Concept ;
+    skos:prefLabel "Delta Blues"@en ;
+    skos:definition "An early blues style from the Mississippi Delta with a raw, authentic sound."@en ;
+    skos:broader musicians:Blues ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Classical a skos:Concept ;
+    skos:prefLabel "Classical"@en ;
+    skos:definition "Formal orchestral and instrumental music rooted in centuries of tradition."@en ;
+    skos:exactMatch wd:Q9730 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:Baroque ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Baroque a skos:Concept ;
+    skos:prefLabel "Baroque"@en ;
+    skos:definition "A classical music period known for ornate compositions and rich musical textures."@en ;
+    skos:broader musicians:Classical ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Country a skos:Concept ;
+    skos:prefLabel "Country"@en ;
+    skos:definition "Story-driven music with roots in American folk and rural traditions."@en ;
+    skos:exactMatch wd:Q83440 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:Bluegrass ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Bluegrass a skos:Concept ;
+    skos:prefLabel "Bluegrass"@en ;
+    skos:definition "An acoustic country style featuring fast tempos and string instruments."@en ;
+    skos:broader musicians:Country ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Reggae a skos:Concept ;
+    skos:prefLabel "Reggae"@en ;
+    skos:definition "Jamaican music style known for its relaxed groove and offbeat rhythms."@en ;
+    skos:exactMatch wd:Q11366 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:Dancehall ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Dancehall a skos:Concept ;
+    skos:prefLabel "Dancehall"@en ;
+    skos:definition "A dance-focused Jamaican genre that evolved from reggae music."@en ;
+    skos:broader musicians:Reggae ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Metal a skos:Concept ;
+    skos:prefLabel "Metal"@en ;
+    skos:definition "Heavy, intense music featuring distorted guitars and powerful sound."@en ;
+    skos:exactMatch wd:Q38848 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:DeathMetal ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:DeathMetal a skos:Concept ;
+    skos:prefLabel "Death Metal"@en ;
+    skos:definition "An extreme metal subgenre with aggressive vocals and intense instrumentation."@en ;
+    skos:broader musicians:Metal ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Folk a skos:Concept ;
+    skos:prefLabel "Folk"@en ;
+    skos:definition "Acoustic-based music that often tells stories and reflects cultural traditions."@en ;
+    skos:exactMatch wd:Q13157 ;
+    skos:topConceptOf musicians:Music ;
+    skos:narrower musicians:IndieFolk ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:IndieFolk a skos:Concept ;
+    skos:prefLabel "Indie Folk"@en ;
+    skos:definition "A contemporary folk style known for intimate, acoustic, and independent sounds."@en ;
+    skos:broader musicians:Folk ;
+    skos:scopeNote "we used ChatGPT"@en .

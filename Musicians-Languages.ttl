@@ -1,0 +1,307 @@
+# ==========================================
+# Define Prefixes 
+# ==========================================
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix wd:   <http://www.wikidata.org/entity/> .
+
+# ==========================================
+# Concept schema 
+# ==========================================
+musicians:Language 
+    a skos:ConceptScheme ;
+    skos:prefLabel "Language"@en ;
+    skos:definition "The method of human communication, either spoken or written, consisting of the use of words in a structured and conventional way."@en ;
+    skos:hasTopConcept musicians:EuropeanLanguages, musicians:AsianLanguages, musicians:MiddleEasternLanguages, musicians:AfricanLanguages .
+
+
+# ==========================================
+# L1 CONCEPTs (Including skos:narrower to L2)
+# ==========================================
+
+musicians:EuropeanLanguages 
+    a skos:Concept ;
+    skos:prefLabel "European Languages"@en ;
+    skos:definition "Major languages originating from Europe, widely used in international business, culture, and education."@en ;
+    skos:topConceptOf musicians:Language ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:English, musicians:Spanish, musicians:French, musicians:German, musicians:Portuguese, musicians:Dutch, musicians:Russian .
+
+musicians:AsianLanguages 
+    a skos:Concept ;
+    skos:prefLabel "Asian Languages"@en ;
+    skos:definition "Major languages originating from East, South, and Southeast Asia, representing diverse language families like Sino-Tibetan and Indo-Aryan."@en ;
+    skos:topConceptOf musicians:Language ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:Japanese, musicians:MandarinChinese.
+
+musicians:MiddleEasternLanguages 
+    a skos:Concept ;
+    skos:prefLabel "Middle Eastern Languages"@en ;
+    skos:definition "Languages originating from and predominantly spoken in the Middle East, including the Semitic and Iranian language branches."@en ;
+    skos:topConceptOf musicians:Language ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:Arabic .
+
+musicians:AfricanLanguages 
+    a skos:Concept ;
+    skos:prefLabel "African Languages"@en ;
+    skos:definition "Languages native to the African continent, spanning major phyla such as Niger-Congo, Afroasiatic, and Nilo-Saharan."@en ;
+    skos:topConceptOf musicians:Language ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:Swahili .
+
+# ==========================================
+# L2 CONCEPTs (Including skos:narrower to L3)
+# ==========================================
+
+musicians:English 
+    a skos:Concept ;
+    skos:prefLabel "English"@en ;
+    skos:definition "The most widely used international language for business, science, and media."@en ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:AmericanEnglish, musicians:BritishEnglish .
+
+musicians:Spanish 
+    a skos:Concept ;
+    skos:prefLabel "Spanish"@en ;
+    skos:definition "A Romance language originating from the Iberian Peninsula, widely spoken across the Americas and Europe."@en ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:CastilianSpanish, musicians:LatinAmericanSpanish .
+
+musicians:French 
+    a skos:Concept ;
+    skos:prefLabel "French"@en ;
+    skos:definition "A Romance language originating in France, historically used as a primary language of diplomacy and international relations."@en ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:ParisianFrench, musicians:QuebecFrench .
+
+musicians:German 
+    a skos:Concept ;
+    skos:prefLabel "German"@en ;
+    skos:definition "A Germanic language spoken primarily in Central Europe, acting as a major language of philosophy, engineering, and commerce."@en ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:HighGerman, musicians:SwissGerman .
+
+musicians:Portuguese 
+    a skos:Concept ;
+    skos:prefLabel "Portuguese"@en ;
+    skos:definition "A Romance language originating from the Western Iberian Peninsula, widespread across South America, Africa, and Europe."@en ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:EuropeanPortuguese, musicians:BrazilianPortuguese .
+
+musicians:Dutch 
+    a skos:Concept ;
+    skos:prefLabel "Dutch"@en ;
+    skos:definition "A West Germanic language spoken primarily in the Netherlands and Belgium, playing a significant role in maritime history and European trade."@en ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:Limburgs, musicians:Flemish, musicians:Afrikaans . 
+
+musicians:Russian 
+    a skos:Concept ;
+    skos:prefLabel "Russian"@en ;
+    skos:definition "An East Slavic language written in the Cyrillic script, serving as a major regional language across Eastern Europe and Northern Asia."@en ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:StandardRussian .
+
+musicians:Japanese 
+    a skos:Concept ;
+    skos:prefLabel "Japanese"@en ;
+    skos:definition "An East Asian language spoken primarily in Japan, characterized by a complex system of honorifics and a distinct tripartite writing system."@en ;
+    skos:broader musicians:AsianLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:StandardJapanese, musicians:KansaiDialect .
+
+musicians:MandarinChinese 
+    a skos:Concept ;
+    skos:prefLabel "Mandarin Chinese"@en ;
+    skos:definition "A Sinitic language forming the most spoken branch of Chinese, serving as the official national language of China and Taiwan."@en ;
+    skos:broader musicians:AsianLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:StandardMandarin, musicians:TaiwaneseMandarin .
+
+musicians:Arabic 
+    a skos:Concept ;
+    skos:prefLabel "Arabic"@en ;
+    skos:definition "A Semitic language originating from the Arabian Peninsula, widely used across the Middle East and North Africa as a liturgical and official language."@en ;
+    skos:broader musicians:MiddleEasternLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:ModernStandardArabic, musicians:EgyptianArabic .
+
+musicians:Swahili 
+    a skos:Concept ;
+    skos:prefLabel "Swahili"@en ;
+    skos:definition "A Bantu lingua franca spoken extensively across East Africa, serving as a vital regional vehicle for trade, administration, and education."@en ;
+    skos:broader musicians:AfricanLanguages ;
+    skos:inScheme musicians:Language ;
+    skos:narrower musicians:Kiunguja .
+
+# ==========================================
+# L3 CONCEPTs (Sub-Languages / Variants)
+# ==========================================
+
+# Sub-Languages for English
+musicians:AmericanEnglish 
+    a skos:Concept ;
+    skos:prefLabel "American English"@en ;
+    skos:definition "The variety of the English language native to the United States."@en ;
+    skos:broader musicians:English ;
+    skos:inScheme musicians:Language .
+
+musicians:BritishEnglish 
+    a skos:Concept ;
+    skos:prefLabel "British English"@en ;
+    skos:definition "The variety of the English language native to the United Kingdom."@en ;
+    skos:broader musicians:English ;
+    skos:inScheme musicians:Language .
+
+# Sub-Languages for Spanish
+musicians:CastilianSpanish 
+    a skos:Concept ;
+    skos:prefLabel "Castilian Spanish"@en ;
+    skos:definition "The variety of the Spanish language spoken in northern and central Spain, often considered the standard form."@en ;
+    skos:broader musicians:Spanish ;
+    skos:inScheme musicians:Language .
+
+musicians:LatinAmericanSpanish 
+    a skos:Concept ;
+    skos:prefLabel "Latin American Spanish"@en ;
+    skos:definition "The regional variants of the Spanish language spoken in the countries of Hispanic America."@en ;
+    skos:broader musicians:Spanish ;
+    skos:inScheme musicians:Language .
+
+# Sub-Languages for French
+musicians:ParisianFrench 
+    a skos:Concept ;
+    skos:prefLabel "Parisian French"@en ;
+    skos:definition "The standard variety of the French language spoken in and around Paris."@en ;
+    skos:broader musicians:French ;
+    skos:inScheme musicians:Language .
+
+musicians:QuebecFrench 
+    a skos:Concept ;
+    skos:prefLabel "Quebec French"@en ;
+    skos:definition "The dominant variety of the French language spoken in Canada."@en ;
+    skos:broader musicians:French ;
+    skos:inScheme musicians:Language .
+
+# Sub-Languages for German
+musicians:HighGerman 
+    a skos:Concept ;
+    skos:prefLabel "High German"@en ;
+    skos:definition "The standard variety of the German language used in education, literature, and public communication."@en ;
+    skos:broader musicians:German ;
+    skos:inScheme musicians:Language .
+
+musicians:SwissGerman 
+    a skos:Concept ;
+    skos:prefLabel "Swiss German"@en ;
+    skos:definition "The Alemannic dialects spoken in the German-speaking parts of Switzerland."@en ;
+    skos:broader musicians:German ;
+    skos:inScheme musicians:Language .
+
+# Sub-Languages for Portuguese
+musicians:EuropeanPortuguese 
+    a skos:Concept ;
+    skos:prefLabel "European Portuguese"@en ;
+    skos:definition "The variety of the Portuguese language spoken in Portugal."@en ;
+    skos:broader musicians:Portuguese ;
+    skos:inScheme musicians:Language .
+
+musicians:BrazilianPortuguese 
+    a skos:Concept ;
+    skos:prefLabel "Brazilian Portuguese"@en ;
+    skos:definition "The variety of the Portuguese language spoken in Brazil."@en ;
+    skos:broader musicians:Portuguese ;
+    skos:inScheme musicians:Language .
+
+# Sub-Languages for Dutch
+musicians:Limburgs 
+    a skos:Concept ;
+    skos:prefLabel "Limburgs"@en ;
+    skos:definition "The standard variety of the Dutch language as spoken in the Province of Limburg."@en ;
+    skos:broader musicians:Dutch ;
+    skos:inScheme musicians:Language .
+
+musicians:Flemish 
+    a skos:Concept ;
+    skos:prefLabel "Flemish"@en ;
+    skos:definition "The regional variety of the Dutch language spoken in Flanders, Belgium."@en ;
+    skos:broader musicians:Dutch ;
+    skos:inScheme musicians:Language .
+
+musicians:Afrikaans 
+    a skos:Concept ;
+    skos:prefLabel "Afrikaans"@en ;
+    skos:definition "A daughter language of Dutch that developed in South Africa from 17th-century Early Modern Dutch dialects brought by European settlers."@en ;
+    skos:broader musicians:Dutch ;
+    skos:inScheme musicians:Language .
+
+
+# Sub-Languages for Russian
+musicians:StandardRussian 
+    a skos:Concept ;
+    skos:prefLabel "Standard Russian"@en ;
+    skos:definition "The modern literary and official variant of the Russian language."@en ;
+    skos:broader musicians:Russian ;
+    skos:inScheme musicians:Language .
+
+# Sub-Languages for Japanese
+musicians:StandardJapanese 
+    a skos:Concept ;
+    skos:prefLabel "Standard Japanese"@en ;
+    skos:definition "The official and literary form of the Japanese language, based largely on the historical dialect spoken in Tokyo."@en ;
+    skos:broader musicians:Japanese ;
+    skos:inScheme musicians:Language .
+
+musicians:KansaiDialect 
+    a skos:Concept ;
+    skos:prefLabel "Kansai Dialect"@en ;
+    skos:definition "A prominent regional group of Japanese dialects spoken in the Kansai region, including Osaka, Kyoto, and Kobe."@en ;
+    skos:broader musicians:Japanese ;
+    skos:inScheme musicians:Language .
+
+# Sub-talen voor Mandarijn
+musicians:StandardMandarin 
+    a skos:Concept ;
+    skos:prefLabel "Standard Mandarin"@en ;
+    skos:definition "The official standardized language of mainland China, structured around the phonology of the Beijing dialect."@en ;
+    skos:broader musicians:MandarinChinese ;
+    skos:inScheme musicians:Language .
+
+musicians:TaiwaneseMandarin 
+    a skos:Concept ;
+    skos:prefLabel "Taiwanese Mandarin"@en ;
+    skos:definition "The official variant of Mandarin Chinese spoken and written in Taiwan, showing distinct lexical and phonological features."@en ;
+    skos:broader musicians:MandarinChinese ;
+    skos:inScheme musicians:Language .
+
+# Sub-Languages for Arabic
+musicians:ModernStandardArabic 
+    a skos:Concept ;
+    skos:prefLabel "Modern Standard Arabic"@en ;
+    skos:definition "The standardized literary variety of Arabic used throughout the Arab world in writing, formal speech, and broadcasting."@en ;
+    skos:broader musicians:Arabic ;
+    skos:inScheme musicians:Language .
+
+musicians:EgyptianArabic 
+    a skos:Concept ;
+    skos:prefLabel "Egyptian Arabic"@en ;
+    skos:definition "The vernacular spoken variety of Arabic native to Egypt, widely understood across the Arab world due to media and cinema influence."@en ;
+    skos:broader musicians:Arabic ;
+    skos:inScheme musicians:Language .
+
+# Sub-Language for Swahili
+musicians:Kiunguja 
+    a skos:Concept ;
+    skos:prefLabel "Kiunguja"@en ;
+    skos:definition "The specific dialect of Swahili spoken in Zanzibar Town, which serves as the principal foundation for Modern Standard Swahili."@en ;
+    skos:broader musicians:Swahili ;
+    skos:inScheme musicians:Language .

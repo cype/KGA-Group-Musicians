@@ -1,5 +1,6 @@
 @prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd:   <http://www.wikidata.org/entity/> .
 
 musicians:Instruments a skos:ConceptScheme ;
     skos:prefLabel "Music Instruments"@en, "Musikinstrumente"@de, "Instruments de musique"@fr, "Instrumentos musicales"@es ;
@@ -20,20 +21,20 @@ musicians:Guitar a skos:Concept ;
     skos:prefLabel "Guitar"@en, "Gitarre"@de, "Guitare"@fr, "Guitarra"@es ;
     skos:altLabel "Acoustic Guitar"@en, "Akustische Gitarre"@de, "Guitare acoustique"@fr, "Guitarra acústica"@es ;
     skos:definition "A string instrument played by plucking or strumming the strings."@en ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q6607> ;
+    skos:exactMatch wd:Q6607 ;
     skos:topConceptOf musicians:Instruments ;
     skos:narrower musicians:ElectricGuitar .
 
 musicians:ElectricGuitar a skos:Concept ;
     skos:prefLabel "Electric Guitar"@en, "Elektrische Gitarre"@de, "Guitare électrique"@fr, "Guitarra eléctrica"@es ;
     skos:definition "A guitar that uses electronic amplification to produce sound."@en ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q78987> ;
+    skos:exactMatch wd:Q78987 ;
     skos:broader musicians:Guitar .
 
 musicians:Piano a skos:Concept ;
     skos:prefLabel "Piano"@en, "Piano"@de, "Piano"@fr, "Piano"@es ;
     skos:definition "A keyboard instrument with strings that are struck by hammers."@en ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q5994> ;
+    skos:exactMatch wd:Q5994 ;
     skos:topConceptOf musicians:Instruments ;
     skos:narrower musicians:GrandPiano .
 
@@ -92,48 +93,48 @@ musicians:PreparedPiano a skos:Concept ;
 
 musicians:Violin a skos:Concept ;
     skos:prefLabel "Violin"@en, "Violine"@de, "Violon"@fr, "Violín"@es ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q8355> ;
+    skos:exactMatch wd:Q8355 ;
     skos:definition "A string instrument played with a bow."@en ;
     skos:topConceptOf musicians:Instruments .
 
 musicians:Drums a skos:Concept ;
     skos:prefLabel "Drums"@en, "Schlagzeug"@de, "Tambourins"@fr, "Batería"@es ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q128309> ;
+    skos:exactMatch wd:Q128309 ;
     skos:definition "A percussion instrument played by striking the drums with sticks or mallets."@en ;
     skos:topConceptOf musicians:Instruments .
 
 musicians:BassGuitar a skos:Concept ;
     skos:prefLabel "Bass Guitar"@en, "Bassgitarr"@de, "Guitare basse"@fr, "Guitarra baja"@es ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q46185> ;
+    skos:exactMatch wd:Q46185 ;
     skos:definition "A string instrument played by plucking or strumming the strings."@en ;
     skos:topConceptOf musicians:Instruments .
 
 musicians:Saxophone a skos:Concept ;
     skos:prefLabel "Saxophone"@en, "Saxophon"@de, "Saxophone"@fr, "Saxofón"@es ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q9798> ;
+    skos:exactMatch wd:Q9798 ;
     skos:definition "A woodwind instrument played by blowing into a reed."@en ;
     skos:topConceptOf musicians:Instruments .
 
 musicians:Trumpet a skos:Concept ;
     skos:prefLabel "Trumpet"@en, "Trompete"@de, "Trompette"@fr, "Trompeta"@es ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q8338> ;
+    skos:exactMatch wd:Q8338 ;
     skos:definition "A brass instrument played by buzzing the lips into a mouthpiece."@en ;
     skos:topConceptOf musicians:Instruments .
 
 musicians:Flute a skos:Concept ;
     skos:prefLabel "Flute"@en, "Querflöte"@de, "Flûte"@fr, "Flauta"@es ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q11405> ;
+    skos:exactMatch wd:Q11405 ;
     skos:definition "A woodwind instrument that produces clear, airy tones."@en ;
     skos:topConceptOf musicians:Instruments .
 
 musicians:Cello a skos:Concept ;
     skos:prefLabel "Cello"@en, "Violoncello"@de, "Violoncelle"@fr, "Violoncelo"@es ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q8371> ;
+    skos:exactMatch wd:Q8371 ;
     skos:definition "A string instrument played with a bow."@en ;
     skos:topConceptOf musicians:Instruments .
 
 musicians:Synthesizer a skos:Concept ;
     skos:prefLabel "Synthesizer"@en, "Synthesizer"@de, "Synthétiseur"@fr, "Sintetizador"@es ;
-    skos:exactMatch <http://www.wikidata.org/entity/Q163829> ;
+    skos:exactMatch wd:Q163829 ;
     skos:definition "An electronic instrument that generates and manipulates sound."@en ;
     skos:topConceptOf musicians:Instruments .
