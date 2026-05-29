@@ -1,0 +1,18 @@
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+
+musicians:Genres a skos:ConceptScheme ;
+    skos:prefLabel "Music Genres"@en ;
+    skos:definition "A classification of music into various genres based on style, form, and cultural context."@en ;
+    skos:hasTopConcept musicians:Pop ;
+
+musicians:Pop a skos:Concept ;
+    skos:prefLabel "Pop"@en ;
+    skos:definition "A genre of popular music that originated in the mid-1950s, characterized by a strong rhythm and simple melodies."@en ;
+    skos:topConceptOf musicians:Genres ;
+    skos:narrower musicians:Synthpop ;
+
+musicians:Synthpop a skos:Concept ;
+    skos:prefLabel "Synthpop"@en ;
+    skos:definition "A genre of music that uses synthesizers as the dominant musical instrument, often associated with the 1980s."@en ;
+    skos:broader musicians:Pop ;
+
