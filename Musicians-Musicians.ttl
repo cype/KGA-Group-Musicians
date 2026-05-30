@@ -1,55 +1,81 @@
 @prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wd:   <http://www.wikidata.org/entity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 musicians:Musician a skos:ConceptScheme ;
-    skos:prefLabel "Music"@en ;
+    skos:prefLabel "Musician"@en, "Musiker"@de ;
+    skos:definition "A person who creates, performs, or is involved in music."@en ;
     skos:exactMatch wd:Q639669 ;
     skos:scopeNote "we used ChatGPT"@en ;
+    rdfs:comment "Concept definitions and mappings were developed using information from Wikidata, Wikipedia, and large language models (LLMs), followed by human review and curation."@en ;
     skos:hasTopConcept
-        musicians:Singer.
+        musicians:Singer,
+        musicians:Instrumentalist,
+        musicians:Songwriter,
+        musicians:Melodist,
+        musicians:MusicTeacher .
 
 musicians:Singer a skos:Concept ;
-    skos:prefLabel "Singer"@en ;
+    skos:prefLabel "Singer"@en, "Sänger"@de ;
     skos:definition "A person who performs songs, typically with a focus on vocal ability."@en ;
     skos:exactMatch wd:Q177220 ;
     skos:topConceptOf musicians:Musician ;
     skos:narrower musicians:PopSinger ;
-    skos:scopeNote "we used ChatGPT"@en .
+    skos:scopeNote "Used for persons whose primary musical activity is vocal performance, either as solo artists or members of musical groups."@en .
 
 musicians:PopSinger a skos:Concept ;
-    skos:prefLabel "Pop Singer"@en ;
+    skos:prefLabel "Pop Singer"@en, "Pop-Sänger"@de ;
     skos:definition "A singer who performs pop music."@en ;
     skos:exactMatch wd:Q60723829 ;
     skos:broader musicians:Singer ;
-    skos:scopeNote "we used ChatGPT"@en .
+    skos:scopeNote "Used for persons who specialize in performing pop music."@en .
 
 musicians:Instrumentalist a skos:Concept ;
-    skos:prefLabel "Instrumentalist"@en ;
+    skos:prefLabel "Instrumentalist"@en, "Instrumentalist"@de ;
     skos:definition "A person who plays a musical instrument."@en ;
     skos:exactMatch wd:Q1278335 ;
     skos:topConceptOf musicians:Musician ;
-    skos:narrower musicians:Pianist ;
-    skos:scopeNote "we used ChatGPT"@en .
+    skos:narrower musicians:Pianist .
 
 musicians:Pianist a skos:Concept ;
-    skos:prefLabel "Pianist"@en ;
+    skos:prefLabel "Pianist"@en, "Pianist"@de ;
     skos:definition "A person who plays the piano."@en ;
     skos:exactMatch wd:Q486748 ;
-    skos:broader musicians:Instrumentalist ;
-    skos:scopeNote "we used ChatGPT"@en .
+    skos:broader musicians:Instrumentalist .
 
 musicians:Songwriter a skos:Concept ;
-    skos:prefLabel "Songwriter"@en ;
+    skos:prefLabel "Songwriter"@en, "Songwriter"@de ;
     skos:definition "A person who writes songs."@en ;
     skos:exactMatch wd:Q753110 ;
     skos:topConceptOf musicians:Musician ;
-    skos:narrower musicians:Composer ;
-    skos:scopeNote "we used ChatGPT"@en .
+    skos:narrower musicians:Lyricist .
 
-musicians:Composer a skos:Concept ;
-    skos:prefLabel "Composer"@en ;
-    skos:definition "A person who creates musical compositions."@en ;
-    skos:exactMatch wd:Q36834 ;
-    skos:broader musicians:Songwriter ;
-    skos:scopeNote "we used ChatGPT"@en .
+musicians:Lyricist a skos:Concept ;
+    skos:prefLabel "Lyricist"@en, "Songtexter"@de ;
+    skos:definition "A person who writes lyrics for songs."@en ;
+    skos:exactMatch wd:Q822146 ;
+    skos:broader musicians:Songwriter .
+
+musicians:Melodist a skos:Concept ;
+    skos:prefLabel "Melodist"@en, "Melodist"@de ;
+    skos:definition "A person who writes melodies."@en ;
+    skos:exactMatch wd:Q124738259 ;
+    skos:topConceptOf musicians:Musician ;
+    skos:narrower musicians:HookMelodist, musicians:VocalMelodist .
+
+musicians:HookMelodist a skos:Concept ;
+    skos:prefLabel "Hook Melodist"@en, "Hook-Melodist"@de ;
+    skos:definition "A person who writes catchy melodies."@en ;
+    skos:broader musicians:Melodist .
+
+musicians:VocalMelodist a skos:Concept ;
+    skos:prefLabel "Vocal Melodist"@en, "Vocal-Melodist"@de ;
+    skos:definition "Writes melodies specifically for singers."@en ;
+    skos:broader musicians:Melodist .
+
+musicians:MusicTeacher a skos:Concept ;
+    skos:prefLabel "Music Teacher"@en, "Musiklehrer"@de ;
+    skos:definition "A person who teaches music."@en ;
+    skos:exactMatch wd:Q2675537 ;
+    skos:topConceptOf musicians:Musician .

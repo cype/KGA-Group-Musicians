@@ -33,7 +33,7 @@ musicians:AsianLanguages
     skos:definition "Major languages originating from East, South, and Southeast Asia, representing diverse language families like Sino-Tibetan and Indo-Aryan."@en ;
     skos:topConceptOf musicians:Language ;
     skos:inScheme musicians:Language ;
-    skos:narrower musicians:Japanese, musicians:MandarinChinese.
+    skos:narrower musicians:Japanese, musicians:MandarinChinese .
 
 musicians:MiddleEasternLanguages 
     a skos:Concept ;

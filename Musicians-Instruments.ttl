@@ -14,8 +14,7 @@ musicians:Instrument a skos:ConceptScheme ;
     skos:hasTopConcept musicians:Trumpet ;
     skos:hasTopConcept musicians:Flute ;
     skos:hasTopConcept musicians:Cello ;
-    skos:hasTopConcept musicians:Synthesizer ;
-    skos:scopeNote "A classification of music instruments into various categories based on their construction and playing method."@en .
+    skos:hasTopConcept musicians:Synthesizer .
 
 musicians:Guitar a skos:Concept ;
     skos:prefLabel "Guitar"@en, "Gitarre"@de, "Guitare"@fr, "Guitarra"@es ;

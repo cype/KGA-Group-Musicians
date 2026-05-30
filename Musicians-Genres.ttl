@@ -4,6 +4,7 @@
 
 musicians:MusicGenre a skos:ConceptScheme ;
     skos:prefLabel "Music Genres"@en ;
+    skos:definition "A controlled vocabulary of musical genres and subgenres."@en ;
     skos:scopeNote "we used ChatGPT"@en ;
     skos:hasTopConcept
         musicians:Pop,
