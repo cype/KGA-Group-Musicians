@@ -1,0 +1,55 @@
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd:   <http://www.wikidata.org/entity/> .
+
+musicians:Musician a skos:ConceptScheme ;
+    skos:prefLabel "Music"@en ;
+    skos:exactMatch wd:Q639669 ;
+    skos:scopeNote "we used ChatGPT"@en ;
+    skos:hasTopConcept
+        musicians:Singer.
+
+musicians:Singer a skos:Concept ;
+    skos:prefLabel "Singer"@en ;
+    skos:definition "A person who performs songs, typically with a focus on vocal ability."@en ;
+    skos:exactMatch wd:Q177220 ;
+    skos:topConceptOf musicians:Musician ;
+    skos:narrower musicians:PopSinger ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:PopSinger a skos:Concept ;
+    skos:prefLabel "Pop Singer"@en ;
+    skos:definition "A singer who performs pop music."@en ;
+    skos:exactMatch wd:Q60723829 ;
+    skos:broader musicians:Singer ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Instrumentalist a skos:Concept ;
+    skos:prefLabel "Instrumentalist"@en ;
+    skos:definition "A person who plays a musical instrument."@en ;
+    skos:exactMatch wd:Q1278335 ;
+    skos:topConceptOf musicians:Musician ;
+    skos:narrower musicians:Pianist ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Pianist a skos:Concept ;
+    skos:prefLabel "Pianist"@en ;
+    skos:definition "A person who plays the piano."@en ;
+    skos:exactMatch wd:Q486748 ;
+    skos:broader musicians:Instrumentalist ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Songwriter a skos:Concept ;
+    skos:prefLabel "Songwriter"@en ;
+    skos:definition "A person who writes songs."@en ;
+    skos:exactMatch wd:Q753110 ;
+    skos:topConceptOf musicians:Musician ;
+    skos:narrower musicians:Composer ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:Composer a skos:Concept ;
+    skos:prefLabel "Composer"@en ;
+    skos:definition "A person who creates musical compositions."@en ;
+    skos:exactMatch wd:Q36834 ;
+    skos:broader musicians:Songwriter ;
+    skos:scopeNote "we used ChatGPT"@en .

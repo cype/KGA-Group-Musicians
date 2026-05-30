@@ -2,8 +2,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wd:   <http://www.wikidata.org/entity/> .
 
-musicians:Music a skos:ConceptScheme ;
-    skos:prefLabel "Music"@en ;
+musicians:MusicGenre a skos:ConceptScheme ;
+    skos:prefLabel "Music Genres"@en ;
     skos:scopeNote "we used ChatGPT"@en ;
     skos:hasTopConcept
         musicians:Pop,
@@ -21,7 +21,7 @@ musicians:Pop a skos:Concept ;
     skos:prefLabel "Pop"@en ;
     skos:definition "Catchy, mainstream music focused on strong melodies and broad appeal."@en ;
     skos:exactMatch wd:Q37073 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:Synthpop ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -106,7 +106,7 @@ musicians:Rock a skos:Concept ;
     skos:prefLabel "Rock"@en ;
     skos:definition "Guitar-driven music known for its energy, rhythm, and diverse styles."@en ;
     skos:exactMatch wd:Q11399 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:AlternativeRock ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -120,7 +120,7 @@ musicians:HipHop a skos:Concept ;
     skos:prefLabel "Hip Hop"@en ;
     skos:definition "A genre centered on rap vocals, beats, rhythm, and lyrical expression."@en ;
     skos:exactMatch wd:Q11401 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:Trap ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -134,7 +134,7 @@ musicians:Jazz a skos:Concept ;
     skos:prefLabel "Jazz"@en ;
     skos:definition "Improvisational music featuring complex harmonies and instrumental creativity."@en ;
     skos:exactMatch wd:Q8341 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:Bebop ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -148,7 +148,7 @@ musicians:Blues a skos:Concept ;
     skos:prefLabel "Blues"@en ;
     skos:definition "Emotional music characterized by expressive vocals and distinctive chord progressions."@en ;
     skos:exactMatch wd:Q9759 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:DeltaBlues ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -162,7 +162,7 @@ musicians:Classical a skos:Concept ;
     skos:prefLabel "Classical"@en ;
     skos:definition "Formal orchestral and instrumental music rooted in centuries of tradition."@en ;
     skos:exactMatch wd:Q9730 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:Baroque ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -176,7 +176,7 @@ musicians:Country a skos:Concept ;
     skos:prefLabel "Country"@en ;
     skos:definition "Story-driven music with roots in American folk and rural traditions."@en ;
     skos:exactMatch wd:Q83440 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:Bluegrass ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -190,7 +190,7 @@ musicians:Reggae a skos:Concept ;
     skos:prefLabel "Reggae"@en ;
     skos:definition "Jamaican music style known for its relaxed groove and offbeat rhythms."@en ;
     skos:exactMatch wd:Q11366 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:Dancehall ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -204,7 +204,7 @@ musicians:Metal a skos:Concept ;
     skos:prefLabel "Metal"@en ;
     skos:definition "Heavy, intense music featuring distorted guitars and powerful sound."@en ;
     skos:exactMatch wd:Q38848 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:DeathMetal ;
     skos:scopeNote "we used ChatGPT"@en .
 
@@ -218,7 +218,7 @@ musicians:Folk a skos:Concept ;
     skos:prefLabel "Folk"@en ;
     skos:definition "Acoustic-based music that often tells stories and reflects cultural traditions."@en ;
     skos:exactMatch wd:Q13157 ;
-    skos:topConceptOf musicians:Music ;
+    skos:topConceptOf musicians:MusicGenre ;
     skos:narrower musicians:IndieFolk ;
     skos:scopeNote "we used ChatGPT"@en .
 
