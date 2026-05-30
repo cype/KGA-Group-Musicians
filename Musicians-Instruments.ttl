@@ -1,10 +1,12 @@
 @prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wd:   <http://www.wikidata.org/entity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 musicians:Instrument a skos:ConceptScheme ;
     skos:prefLabel "Music Instruments"@en, "Musikinstrumente"@de, "Instruments de musique"@fr, "Instrumentos musicales"@es ;
     skos:definition "A classification of music instruments into various categories based on their construction and playing method."@en ;
+    rdfs:comment "Concept definitions and mappings were developed using information from Wikidata, Wikipedia, and large language models (LLMs), followed by human review and curation."@en ;    
     skos:hasTopConcept musicians:Guitar ;
     skos:hasTopConcept musicians:Piano ;
     skos:hasTopConcept musicians:Violin ;
