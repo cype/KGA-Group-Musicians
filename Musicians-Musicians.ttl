@@ -21,7 +21,7 @@ musicians:Singer a skos:Concept ;
     skos:definition "A person who performs songs, typically with a focus on vocal ability."@en ;
     skos:exactMatch wd:Q177220 ;
     skos:topConceptOf musicians:Musician ;
-    skos:narrower musicians:PopSinger ;
+    skos:narrower musicians:PopSinger, musicians:RockSinger, musicians:OperaSinger ;
     skos:scopeNote "Used for persons whose primary musical activity is vocal performance, either as solo artists or members of musical groups."@en .
 
 musicians:PopSinger a skos:Concept ;
@@ -31,17 +31,49 @@ musicians:PopSinger a skos:Concept ;
     skos:broader musicians:Singer ;
     skos:scopeNote "Used for persons who specialize in performing pop music."@en .
 
+musicians:RockSinger a skos:Concept ;
+    skos:prefLabel "Rock Singer"@en, "Rock-Sänger"@de ;
+    skos:definition "A singer who performs rock music."@en ;
+    skos:exactMatch wd:Q104218554 ;
+    skos:broader musicians:Singer ;
+    skos:scopeNote "Used for persons who specialize in performing rock music."@en .
+
+musicians:OperaSinger a skos:Concept ;
+    skos:prefLabel "Opera Singer"@en, "Opernsänger"@de ;
+    skos:definition "A singer who performs opera and classical vocal repertoire."@en ;
+    skos:exactMatch wd:Q2865819 ;
+    skos:broader musicians:Singer ;
+    skos:scopeNote "Used for persons whose primary musical activity is performing opera roles."@en .
+
 musicians:Instrumentalist a skos:Concept ;
     skos:prefLabel "Instrumentalist"@en, "Instrumentalist"@de ;
     skos:definition "A person who plays a musical instrument."@en ;
     skos:exactMatch wd:Q1278335 ;
     skos:topConceptOf musicians:Musician ;
-    skos:narrower musicians:Pianist .
+    skos:narrower musicians:Pianist, musicians:Guitarist, musicians:Drummer, musicians:Violinist .
 
 musicians:Pianist a skos:Concept ;
     skos:prefLabel "Pianist"@en, "Pianist"@de ;
     skos:definition "A person who plays the piano."@en ;
     skos:exactMatch wd:Q486748 ;
+    skos:broader musicians:Instrumentalist .
+
+musicians:Guitarist a skos:Concept ;
+    skos:prefLabel "Guitarist"@en, "Gitarrist"@de ;
+    skos:definition "A person who plays the guitar."@en ;
+    skos:exactMatch wd:Q855091 ;
+    skos:broader musicians:Instrumentalist .
+
+musicians:Drummer a skos:Concept ;
+    skos:prefLabel "Drummer"@en, "Schlagzeuger"@de ;
+    skos:definition "A person who plays the drums."@en ;
+    skos:exactMatch wd:Q386854 ;
+    skos:broader musicians:Instrumentalist .
+
+musicians:Violinist a skos:Concept ;
+    skos:prefLabel "Violinist"@en, "Geiger"@de ;
+    skos:definition "A person who plays the violin."@en ;
+    skos:exactMatch wd:Q1259917 ;
     skos:broader musicians:Instrumentalist .
 
 musicians:Songwriter a skos:Concept ;
@@ -78,4 +110,37 @@ musicians:MusicTeacher a skos:Concept ;
     skos:prefLabel "Music Teacher"@en, "Musiklehrer"@de ;
     skos:definition "A person who teaches music."@en ;
     skos:exactMatch wd:Q2675537 ;
-    skos:topConceptOf musicians:Musician .
+    skos:topConceptOf musicians:Musician ;
+    skos:narrower musicians:VocalCoach, musicians:PianoTeacher .
+
+musicians:VocalCoach a skos:Concept ;
+    skos:prefLabel "Vocal Coach"@en, "Gesangscoach"@de ;
+    skos:definition "A music teacher who trains singers in vocal technique, interpretation, and performance."@en ;
+    skos:exactMatch wd:Q20971450 ;
+    skos:broader musicians:MusicTeacher .
+
+musicians:PianoTeacher a skos:Concept ;
+    skos:prefLabel "Piano Teacher"@en, "Klavierlehrer"@de ;
+    skos:definition "A music teacher who teaches students how to play the piano."@en ;
+    skos:closeMatch wd:Q17303149 ;
+    skos:broader musicians:MusicTeacher .
+
+musicians:MusicProducer a skos:Concept ;
+    skos:prefLabel "Music Producer"@en, "Musikproduzent"@de ;
+    skos:definition "A person who oversees and manages the creation and production of music recordings."@en ;
+    skos:topConceptOf musicians:Musician ;
+    skos:narrower
+        musicians:RecordProducer,
+        musicians:ExecutiveProducer .
+
+musicians:RecordProducer a skos:Concept ;
+    skos:prefLabel "Record Producer"@en, "Tonträgerproduzent"@de ;
+    skos:definition "A music producer who supervises and directs the artistic and technical aspects of recording music."@en ;
+    skos:exactMatch wd:Q183945 ;
+    skos:broader musicians:MusicProducer .
+
+musicians:ExecutiveProducer a skos:Concept ;
+    skos:prefLabel "Executive Producer"@en, "Executive Producer"@de ;
+    skos:definition "A producer responsible for financing, administration, or overall project supervision of music productions."@en ;
+    skos:exactMatch wd:Q1053574 ;
+    skos:broader musicians:MusicProducer .
