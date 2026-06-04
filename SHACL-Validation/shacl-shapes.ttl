@@ -1,0 +1,145 @@
+@prefix : <http://example.org/shapes#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:ConceptShape
+    a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+
+    # Projektregel, nicht SKOS-Pflicht:
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+        sh:or (
+            [ sh:datatype rdf:langString ]
+            [ sh:datatype xsd:string ]
+        ) ;
+    ] ;
+
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:uniqueLang true ;
+        sh:or (
+            [ sh:datatype rdf:langString ]
+            [ sh:datatype xsd:string ]
+        ) ;
+    ] ;
+
+    sh:property [
+        sh:path skos:hiddenLabel ;
+        sh:uniqueLang true ;
+        sh:or (
+            [ sh:datatype rdf:langString ]
+            [ sh:datatype xsd:string ]
+        ) ;
+    ] ;
+
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:class skos:ConceptScheme ;
+    ] ;
+
+    sh:property [
+        sh:path skos:topConceptOf ;
+        sh:class skos:ConceptScheme ;
+    ] ;
+
+    sh:property [
+        sh:path skos:broader ;
+        sh:class skos:Concept ;
+    ] ;
+
+    sh:property [
+        sh:path skos:narrower ;
+        sh:class skos:Concept ;
+    ] ;
+
+    sh:property [
+        sh:path skos:related ;
+        sh:class skos:Concept ;
+    ] ;
+
+    # prefLabel / altLabel / hiddenLabel dürfen nicht denselben Wert haben
+    sh:sparql [
+        sh:message "Ein Label darf nicht gleichzeitig prefLabel und altLabel sein." ;
+        sh:select """
+            SELECT $this ?value WHERE {
+                $this skos:prefLabel ?value ;
+                      skos:altLabel ?value .
+            }
+        """ ;
+    ] ;
+
+    sh:sparql [
+        sh:message "Ein Label darf nicht gleichzeitig prefLabel und hiddenLabel sein." ;
+        sh:select """
+            SELECT $this ?value WHERE {
+                $this skos:prefLabel ?value ;
+                      skos:hiddenLabel ?value .
+            }
+        """ ;
+    ] ;
+
+    sh:sparql [
+        sh:message "Ein Label darf nicht gleichzeitig altLabel und hiddenLabel sein." ;
+        sh:select """
+            SELECT $this ?value WHERE {
+                $this skos:altLabel ?value ;
+                      skos:hiddenLabel ?value .
+            }
+        """ ;
+    ] ;
+
+    # skos:related darf nicht zugleich hierarchisch sein
+    sh:sparql [
+        sh:message "skos:related und skos:broaderTransitive dürfen nicht zwischen denselben Concepts verwendet werden." ;
+        sh:select """
+            SELECT $this ?other WHERE {
+                $this skos:related ?other ;
+                      skos:broaderTransitive ?other .
+            }
+        """ ;
+    ] .
+
+:ConceptSchemeShape
+    a sh:NodeShape ;
+    sh:targetClass skos:ConceptScheme ;
+
+    sh:property [
+        sh:path skos:hasTopConcept ;
+        sh:class skos:Concept ;
+    ] .
+
+:CollectionShape
+    a sh:NodeShape ;
+    sh:targetClass skos:Collection ;
+
+    sh:not [
+        sh:class skos:Concept
+    ] ;
+
+    sh:not [
+        sh:class skos:ConceptScheme
+    ] ;
+
+    sh:property [
+        sh:path skos:member ;
+        sh:or (
+            [ sh:class skos:Concept ]
+            [ sh:class skos:Collection ]
+        ) ;
+    ] .
+
+:OrderedCollectionShape
+    a sh:NodeShape ;
+    sh:targetClass skos:OrderedCollection ;
+
+    sh:property [
+        sh:path skos:memberList ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class rdf:List ;
+    ] .
