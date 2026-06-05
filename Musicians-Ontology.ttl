@@ -9,10 +9,11 @@ musicians:MusicianOntology a owl:Ontology ;
     rdfs:comment "This ontology defines concepts related to musicians, their careers, and roles in music."@en ;
     rdfs:label "Musicians Ontology"@en .
 
-schema:Person a owl:Class ;
+musicians:Person a owl:Class ;
+    rdfs:subClassOf schema:Person ;
     rdfs:label "Person"@en, "Person"@de ;
-    rdfs:comment "A human being who may be involved in musical activities."@en ;
-    rdfs:isDefinedBy schema:Thing .
+    rdfs:comment "An individual human being, typically involved in musical activities."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology .
 
 musicians:MusicalCareer a owl:Class ;
     rdfs:label "Musical Career"@en, "Musikalische Karriere"@de ;
@@ -25,11 +26,11 @@ musicians:MusicalRole a owl:Class ;
     rdfs:isDefinedBy musicians:MusicianOntology .
 
 musicians:hasCareer a owl:ObjectProperty ;
-    rdfs:domain schema:Person ;
+    rdfs:domain musicians:Person ;
     rdfs:range musicians:MusicalCareer .
 
 musicians:plays a owl:ObjectProperty ;
-    rdfs:domain schema:Person .
+    rdfs:domain musicians:Person .
     # rdfs:range instruments:Instrument . # we dont really know, group Instruments
 
 musicians:Language a owl:Class ;
@@ -38,22 +39,46 @@ musicians:Language a owl:Class ;
     rdfs:isDefinedBy musicians:MusicianOntology .
 
 musicians:speaks a owl:ObjectProperty ;
-    rdfs:domain schema:Person ;
+    rdfs:domain musicians:Person ;
     rdfs:range musicians:Language .
 
 musicians:hasName a owl:DatatypeProperty ;
-    rdfs:domain schema:Person ;
+    rdfs:domain musicians:Person ;
     rdfs:range xsd:string .
 
 musicians:hasGender a owl:DatatypeProperty ;
-    rdfs:domain schema:Person ;
+    rdfs:domain musicians:Person ;
     rdfs:range schema:Gender .
 
-schema:Movie a owl:Class ;
+musicians:Movie a owl:Class ;
     rdfs:label "Movie"@en, "Film"@de ;
     rdfs:comment "A motion picture or film."@en ;
-    rdfs:isDefinedBy schema:Thing .
+    rdfs:subClassOf schema:Movie ;
+    rdfs:isDefinedBy musicians:MusicianOntology .
 
 musicians:hasRoleInMovie a owl:ObjectProperty ;
-    rdfs:domain schema:Person ;
-    rdfs:range schema:Movie .
+    rdfs:domain musicians:Person ;
+    rdfs:range musicians:Movie .
+
+musicians:DegreeOfFame a owl:Class ;
+    rdfs:label "Degree of Fame"@en, "Grad der Berühmtheit"@de ;
+    rdfs:comment "The level of recognition and popularity a person has achieved in their musical career."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology ;
+    owl:oneOf (
+        musicians:LocalFame
+        musicians:NationalFame
+        musicians:InternationalFame
+    ) .
+
+musicians:LocalFame a musicians:DegreeOfFame ;
+    rdfs:label "Local Fame"@en .
+
+musicians:NationalFame a musicians:DegreeOfFame ;
+    rdfs:label "National Fame"@en .
+
+musicians:InternationalFame a musicians:DegreeOfFame ;
+    rdfs:label "International Fame"@en .
+
+musicians:hasDegreeOfFame a owl:ObjectProperty ;
+    rdfs:domain musicians:Person ;
+    rdfs:range musicians:DegreeOfFame .
