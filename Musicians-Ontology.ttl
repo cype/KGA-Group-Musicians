@@ -42,10 +42,6 @@ musicians:speaks a owl:ObjectProperty ;
     rdfs:domain musicians:Person ;
     rdfs:range musicians:Language .
 
-musicians:hasName a owl:DatatypeProperty ;
-    rdfs:domain musicians:Person ;
-    rdfs:range xsd:string .
-
 musicians:hasGender a owl:DatatypeProperty ;
     rdfs:domain musicians:Person ;
     rdfs:range schema:Gender .
