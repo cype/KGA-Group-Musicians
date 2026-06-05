@@ -1,0 +1,59 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix schema: <http://schema.org/> .
+
+musicians:MusicianOntology a owl:Ontology ;
+    rdfs:comment "This ontology defines concepts related to musicians, their careers, and roles in music."@en ;
+    rdfs:label "Musicians Ontology"@en .
+
+schema:Person a owl:Class ;
+    rdfs:label "Person"@en, "Person"@de ;
+    rdfs:comment "A human being who may be involved in musical activities."@en ;
+    rdfs:isDefinedBy schema:Thing .
+
+musicians:MusicalCareer a owl:Class ;
+    rdfs:label "Musical Career"@en, "Musikalische Karriere"@de ;
+    rdfs:comment "The professional involvement of a person in musical activities."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology .
+
+musicians:MusicalRole a owl:Class ;
+    rdfs:label "Musical Role"@en, "Musikale Rolle"@de ;
+    rdfs:comment "The role played by a person in musical activities."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology .
+
+musicians:hasCareer a owl:ObjectProperty ;
+    rdfs:domain schema:Person ;
+    rdfs:range musicians:MusicalCareer .
+
+musicians:plays a owl:ObjectProperty ;
+    rdfs:domain schema:Person ;
+    rdfs:range instruments:Instrument . # we dont really know, group Instruments
+
+musicians:Language a owl:Class ;
+    rdfs:label "Language"@en, "Sprache"@de ;
+    rdfs:comment "A system of communication used by a particular community or country."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology .
+
+musicians:speaks a owl:ObjectProperty ;
+    rdfs:domain schema:Person ;
+    rdfs:range musicians:Language .
+
+musicians:hasName a owl:DatatypeProperty ;
+    rdfs:domain schema:Person ;
+    rdfs:range xsd:string .
+
+musicians:hasGender a owl:DatatypeProperty ;
+    rdfs:domain schema:Person ;
+    rdfs:range schema:Gender .
+
+schema:Movie a owl:Class ;
+    rdfs:label "Movie"@en, "Film"@de ;
+    rdfs:comment "A motion picture or film."@en ;
+    rdfs:isDefinedBy schema:Thing .
+
+musicians:hasRoleInMovie a owl:ObjectProperty ;
+    rdfs:domain schema:Person ;
+    rdfs:range schema:Movie .
