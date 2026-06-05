@@ -2,6 +2,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wd:   <http://www.wikidata.org/entity/> .
 
+# will be linked to musical career
+
 musicians:MusicGenre a skos:ConceptScheme ;
     skos:prefLabel "Music Genres"@en ;
     skos:definition "A controlled vocabulary of musical genres and subgenres."@en ;
