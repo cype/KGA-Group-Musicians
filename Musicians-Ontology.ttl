@@ -82,3 +82,7 @@ musicians:InternationalFame a musicians:DegreeOfFame ;
 musicians:hasDegreeOfFame a owl:ObjectProperty ;
     rdfs:domain musicians:Person ;
     rdfs:range musicians:DegreeOfFame .
+
+musicians:hasRole a owl:ObjectProperty ;
+    rdfs:domain musicians:MusicalCareer ;
+    rdfs:range musicians:MusicalRole .
