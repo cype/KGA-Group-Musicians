@@ -3,6 +3,11 @@
 @prefix wd:   <http://www.wikidata.org/entity/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+# add Person
+
+# add musical career
+
+# change to musical identity
 musicians:Musician a skos:ConceptScheme ;
     skos:prefLabel "Musician"@en, "Musiker"@de ;
     skos:definition "A person who creates, performs, or is involved in music."@en ;
