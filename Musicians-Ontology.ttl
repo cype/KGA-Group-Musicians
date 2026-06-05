@@ -29,8 +29,8 @@ musicians:hasCareer a owl:ObjectProperty ;
     rdfs:range musicians:MusicalCareer .
 
 musicians:plays a owl:ObjectProperty ;
-    rdfs:domain schema:Person ;
-    rdfs:range instruments:Instrument . # we dont really know, group Instruments
+    rdfs:domain schema:Person .
+    # rdfs:range instruments:Instrument . # we dont really know, group Instruments
 
 musicians:Language a owl:Class ;
     rdfs:label "Language"@en, "Sprache"@de ;
