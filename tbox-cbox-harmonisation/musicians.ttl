@@ -8,6 +8,7 @@
 @prefix wd:   <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix inst: <http://instruments.knowledge-graph-guys.com/> . ## Fixed from http://instruments.knowledge-graph-guys.com/
+@prefix imdb: <https://www.imdb.com/title/> .
 
 ### Your group's namespace ###
 
@@ -569,10 +570,12 @@ data:paul-mccartney-career a musicians:MusicalCareer ;
 
 data:paul-mccartney-role-in-the-beatles-movie a musicians:Movie ;
     rdfs:label "Yellow Submarine"@en ;
+    schema:sameAs imdb:tt0063823 ;
     rdfs:comment "A 1968 animated film featuring the music of The Beatles."@en .
 
 data:paul-mccartney-role-in-the-beatles-better-movie a musicians:Movie ;
     rdfs:label "A Hard Days Night"@en ;
+    schema:sameAs imdb:tt0058182 ;
     rdfs:comment "A 1964 film featuring the music of The Beatles."@en .
 
 data:taylor-swift a musicians:Person ;
@@ -589,6 +592,7 @@ data:taylor-swift a musicians:Person ;
 
 data:taylor-swift-role-in-the-movie-a-beautiful-day-in-the-neighborhood a musicians:Movie ;
     rdfs:label "A Beautiful Day in the Neighborhood"@en ;
+    schema:sameAs imdb:tt3224458 ;
     rdfs:comment "A 2019 biographical film about the life and career of Fred Rogers, in which Taylor Swift played the role of Miss Thang."@en .
 
 data:taylor-swift-career a musicians:MusicalCareer ;
