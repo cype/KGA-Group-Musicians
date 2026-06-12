@@ -1,4 +1,4 @@
-´´´
+```
 # Which internationally famous instrumentalists play the guitar?
 
 PREFIX musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#>
@@ -19,6 +19,8 @@ WHERE {
 
     BIND(CONCAT(?givenName, " ", ?familyName) AS ?fullName)
 }
-´´´
+```
 
-https://atomgraph.github.io/SPARQL-Playground/
+https://atomgraph.github.io/SPARQL-Playground/<br>
+
+https://docs.google.com/document/d/1Cb0I78dBxjR_1xUavPHxwNQld4UI8OhLkvDEL-a18MM/edit?tab=t.0
