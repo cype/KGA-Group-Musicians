@@ -4,6 +4,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
 @prefix schema: <http://schema.org/> .
+@prefix inst: <http://instruments.knowledge-graph-guys.com/> . ## Fixed from http://instruments.knowledge-graph-guys.com/
 
 musicians:MusicianOntology a owl:Ontology ;
     rdfs:comment "This ontology defines concepts related to musicians, their careers, and roles in music."@en ;
@@ -30,8 +31,14 @@ musicians:hasCareer a owl:ObjectProperty ;
     rdfs:range musicians:MusicalCareer .
 
 musicians:plays a owl:ObjectProperty ;
-    rdfs:domain musicians:Person .
-    # rdfs:range instruments:Instrument . # we dont really know, group Instruments
+    rdfs:domain musicians:Person ;
+    rdfs:label "plays"@en ;
+    rdfs:range inst:Instrument . # Fixed class reference from instruments-ontology-v3-school.ttl
+
+musicians:hasPrimaryInstrument a owl:ObjectProperty ;
+    rdfs:label "has primary instrument"@en ;
+    rdfs:domain musicians:Person ;
+    rdfs:range inst:Instrument .
 
 musicians:Language a owl:Class ;
     rdfs:label "Language"@en, "Sprache"@de ;
