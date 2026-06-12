@@ -553,7 +553,7 @@ musicians:Kiunguja
 # ==========================================
 
 data:paul-mccartney a musicians:Person ;
-    musicians:hasCareer data:paul-mccartney-career ;
+    musicians:hasCareer data:paul-mccartney-career-beatles, data:paul-solo-career ;
     schema:givenName "Paul" ;
     schema:familyName "McCartney" ;
     schema:birthDate "1942-06-18"^^xsd:date ;
@@ -565,8 +565,11 @@ data:paul-mccartney a musicians:Person ;
     musicians:hasRoleInMovie data:paul-mccartney-role-in-the-beatles-movie ;
     musicians:hasRoleInMovie data:paul-mccartney-role-in-the-beatles-better-movie .
 
-data:paul-mccartney-career a musicians:MusicalCareer ;
+data:paul-mccartney-career-beatles a musicians:MusicalCareer ;
     musicians:hasRole musicians:RockSinger .
+
+data:paul-solo-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:Vocalist .
 
 data:paul-mccartney-role-in-the-beatles-movie a musicians:Movie ;
     rdfs:label "Yellow Submarine"@en ;
