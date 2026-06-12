@@ -12,6 +12,7 @@
 ### Your group's namespace ###
 
 @prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix data: <https://www.knowledge-graph-guys.com/music-ontology/data#> .
 
 ### CLASS DEFINITIONS ###
 
@@ -543,3 +544,82 @@ musicians:Kiunguja
     skos:definition "The specific dialect of Swahili spoken in Zanzibar Town, which serves as the principal foundation for Modern Standard Swahili."@en ;
     skos:broader musicians:Swahili ;
     skos:inScheme musicians:Languages .
+
+
+
+# ==========================================
+# DATA-GRAPH
+# ==========================================
+
+data:paul-mccartney a musicians:Person ;
+    musicians:hasCareer data:paul-mccartney-career ;
+    schema:givenName "Paul" ;
+    schema:familyName "McCartney" ;
+    schema:birthDate "1942-06-18"^^xsd:date ;
+    musicians:plays inst:bass-guitar ; # URI
+    musicians:hasPrimaryInstrument inst:bass-guitar ; # URI
+    musicians:speaks musicians:English ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    schema:gender "Male" ;
+    musicians:hasRoleInMovie data:paul-mccartney-role-in-the-beatles-movie ;
+    musicians:hasRoleInMovie data:paul-mccartney-role-in-the-beatles-better-movie .
+
+data:paul-mccartney-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:RockSinger .
+
+data:paul-mccartney-role-in-the-beatles-movie a musicians:Movie ;
+    rdfs:label "Yellow Submarine"@en ;
+    rdfs:comment "A 1968 animated film featuring the music of The Beatles."@en .
+
+data:paul-mccartney-role-in-the-beatles-better-movie a musicians:Movie ;
+    rdfs:label "A Hard Days Night"@en ;
+    rdfs:comment "A 1964 film featuring the music of The Beatles."@en .
+
+data:taylor-swift a musicians:Person ;
+    musicians:hasCareer data:taylor-swift-career ;
+    schema:givenName "Taylor" ;
+    schema:familyName "Swift" ;
+    schema:birthDate "1989-12-13"^^xsd:date ;
+    musicians:plays inst:guitar ; # URI
+    musicians:hasPrimaryInstrument inst:guitar ; # URI
+    musicians:speaks musicians:English ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    schema:gender "Female" ;
+    musicians:hasRoleInMovie data:taylor-swift-role-in-the-movie-a-beautiful-day-in-the-neighborhood .
+
+data:taylor-swift-role-in-the-movie-a-beautiful-day-in-the-neighborhood a musicians:Movie ;
+    rdfs:label "A Beautiful Day in the Neighborhood"@en ;
+    rdfs:comment "A 2019 biographical film about the life and career of Fred Rogers, in which Taylor Swift played the role of Miss Thang."@en .
+
+data:taylor-swift-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:PopSinger, musicians:Songwriter, musicians:Melodist .
+
+data:madonna a musicians:Person ;
+    musicians:hasCareer data:madonna-career ;
+    schema:givenName "Madonna" ;
+    schema:additionalName "Louise" ;
+    schema:familyName "Ciccone" ;
+    schema:birthDate "1958-08-16"^^xsd:date ;
+    musicians:plays inst:vocals ; # URI
+    musicians:hasPrimaryInstrument inst:vocals ; # URI
+    musicians:speaks musicians:English ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    schema:gender "Female" .
+
+data:madonna-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:PopSinger, musicians:Songwriter, musicians:Melodist, musicians:MusicProducer .
+
+data:andre-hazes a musicians:Person ;
+    musicians:hasCareer data:andre-hazes-career ;
+    schema:givenName "André" ;
+    schema:familyName "Hazes" ;
+    schema:birthDate "1951-06-30"^^xsd:date ;
+    schema:deathDate "2004-09-23"^^xsd:date ;
+    musicians:plays inst:vocals ; # URI
+    musicians:hasPrimaryInstrument inst:vocals ; # URI
+    musicians:speaks musicians:Dutch ;
+    musicians:hasDegreeOfFame musicians:NationalFame ;
+    schema:gender "Male" .
+
+data:andre-hazes-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:PopSinger, musicians:Songwriter, musicians:Melodist .

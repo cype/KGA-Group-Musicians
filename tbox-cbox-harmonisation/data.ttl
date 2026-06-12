@@ -1,0 +1,40 @@
+### General W3C namespaces ###
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix wd:   <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix inst: <http://instruments.knowledge-graph-guys.com/> . ## Fixed from http://instruments.knowledge-graph-guys.com/
+
+### Your group's namespace ###
+
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix data: <https://www.knowledge-graph-guys.com/music-ontology/data#> .
+
+
+# ==========================================
+# DATA-GRAPH
+# ==========================================
+
+data:paul-mccartney a musicians:Person ;
+    musicians:hasCareer data:paul-mccartney-career ;
+    musicians:givenName "Paul McCartney" ;
+    musicians:birthDate "1942-06-18" ;
+    musicians:plays inst:bass-guitar ; # URI
+    musicians:hasPrimaryInstrument inst:bass-guitar ; # URI
+    musicians:speaks musicians:BritishEnglish ;
+    musicians:hasDegreeOfFame "InternationalFame" ;
+    musicians:hasGender "Male" ;
+    musicians:hasRoleInMovie data:paul-mccartney-role-in-the-beatles-movie .
+
+data:paul-mccartney-career a musicians:MusicalCareer ;
+    musicians:hasRole data:paul-mccartney-musical-role-in-the-beatles .
+
+data:paul-mccartney-musical-role-in-the-beatles a musicians:MusicalRole, musicians:RockSinger ;
+
+data:paul-mccartney-role-in-the-beatles-movie a musicians:Movie ;
+    rdfs:label "Yellow Submarine"@en ;
+    rdfs:comment "A 1968 animated film featuring the music of The Beatles."@en .
