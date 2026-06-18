@@ -1,0 +1,359 @@
+@prefix band: <https://www.knowledge-graph-guys.com/music-ontology/data/band/> .
+@prefix career: <https://www.knowledge-graph-guys.com/music-ontology/data/musical-career/> .
+@prefix extraction: <https://www.knowledge-graph-guys.com/music-ontology/data/extraction/> .
+@prefix inst: <http://instruments.knowledge-graph-guys.com/> .
+@prefix membership: <https://www.knowledge-graph-guys.com/music-ontology/data/band-membership/> .
+@prefix movie: <https://www.knowledge-graph-guys.com/music-ontology/data/movie/> .
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix person: <https://www.knowledge-graph-guys.com/music-ontology/data/person/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix source: <https://www.knowledge-graph-guys.com/music-ontology/data/source/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+source:Lady_Gaga_Wikipedia a prov:Entity ;
+    schema:name "Lady Gaga - Wikipedia"@en ;
+    schema:url <https://en.wikipedia.org/wiki/Lady_Gaga> ;
+    prov:generatedAtTime "2026-06-18T00:00:00+02:00"^^xsd:dateTime .
+
+extraction:Lady_Gaga_Wikipedia_Mode2 a prov:Activity ;
+    rdfs:label "Mode 2 extraction from Lady Gaga Wikipedia article"@en ;
+    prov:used source:Lady_Gaga_Wikipedia ;
+    prov:startedAtTime "2026-06-18T00:00:00+02:00"^^xsd:dateTime .
+
+person:Stefani_Joanne_Angelina_Germanotta a musicians:Person ;
+    rdfs:label "Stefani Joanne Angelina Germanotta"@en ;
+    schema:name "Stefani Joanne Angelina Germanotta" ;
+    schema:alternateName "Lady Gaga" ;
+    schema:birthDate "1986-03-28"^^xsd:date ;
+    schema:gender "Female" ;
+    musicians:hasCareer career:Lady_Gaga_career ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    musicians:plays inst:piano ;
+    musicians:memberOf band:the_SGBand ;
+    musicians:hasBandMembership membership:Lady_Gaga_the_SGBand_2005 ;
+    musicians:hasRoleInMovie movie:A_Star_Is_Born,
+        movie:House_of_Gucci ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 0 ;
+        oa:end 34 ;
+        oa:exact "Stefani Joanne Angelina Germanotta"
+    ], [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 82 ;
+        oa:end 91 ;
+        oa:exact "Lady Gaga"
+    ], [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 2330 ;
+        oa:end 2358 ;
+        oa:exact "highest-paid female musician"
+    ] .
+
+career:Lady_Gaga_career a musicians:MusicalCareer ;
+    rdfs:label "Lady Gaga musical career"@en ;
+    musicians:hasRole musicians:Singer,
+        musicians:Songwriter,
+        musicians:MusicProducer ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 108 ;
+        oa:end 114 ;
+        oa:exact "singer"
+    ], [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 116 ;
+        oa:end 126 ;
+        oa:exact "songwriter"
+    ], [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 7748 ;
+        oa:end 7756 ;
+        oa:exact "produced"
+    ] .
+
+inst:piano a inst:Instrument ;
+    rdfs:label "piano"@en ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 3733 ;
+        oa:end 3738 ;
+        oa:exact "piano"
+    ] .
+
+band:the_SGBand a musicians:Band ;
+    rdfs:label "the SGBand"@en ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 6824 ;
+        oa:end 6834 ;
+        oa:exact "the SGBand"
+    ] .
+
+membership:Lady_Gaga_the_SGBand_2005 a musicians:BandMembership ;
+    rdfs:label "Lady Gaga membership in the SGBand, 2005"@en ;
+    musicians:membershipBand band:the_SGBand ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 6803 ;
+        oa:end 6834 ;
+        oa:exact "formed a band called the SGBand"
+    ] .
+
+movie:A_Star_Is_Born a musicians:Movie ;
+    rdfs:label "A Star Is Born"@en ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 1444 ;
+        oa:end 1458 ;
+        oa:exact "A Star Is Born"
+    ] .
+
+movie:House_of_Gucci a musicians:Movie ;
+    rdfs:label "House of Gucci"@en ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 1470 ;
+        oa:end 1484 ;
+        oa:exact "House of Gucci"
+    ] .
+
+person:Tony_Bennett a musicians:Person ;
+    rdfs:label "Tony Bennett"@en ;
+    schema:name "Tony Bennett" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 1234 ;
+        oa:end 1246 ;
+        oa:exact "Tony Bennett"
+    ] .
+
+person:Melle_Mel a musicians:Person ;
+    rdfs:label "Melle Mel"@en ;
+    schema:name "Melle Mel" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 6696 ;
+        oa:end 6705 ;
+        oa:exact "Melle Mel"
+    ] .
+
+person:Cricket_Casey a musicians:Person ;
+    rdfs:label "Cricket Casey"@en ;
+    schema:name "Cricket Casey" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 6737 ;
+        oa:end 6750 ;
+        oa:exact "Cricket Casey"
+    ] .
+
+person:Wendy_Starland a musicians:Person ;
+    rdfs:label "Wendy Starland"@en ;
+    schema:name "Wendy Starland" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 7068 ;
+        oa:end 7082 ;
+        oa:exact "Wendy Starland"
+    ] .
+
+person:Rob_Fusari a musicians:Person ;
+    rdfs:label "Rob Fusari"@en ;
+    schema:name "Rob Fusari" ;
+    musicians:hasCareer career:Rob_Fusari_career ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 7117 ;
+        oa:end 7127 ;
+        oa:exact "Rob Fusari"
+    ] .
+
+career:Rob_Fusari_career a musicians:MusicalCareer ;
+    rdfs:label "Rob Fusari musical career"@en ;
+    musicians:hasRole musicians:MusicProducer ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 7102 ;
+        oa:end 7127 ;
+        oa:exact "music producer Rob Fusari"
+    ] .
+
+person:Lady_Starlight a musicians:Person ;
+    rdfs:label "Lady Starlight"@en ;
+    schema:name "Lady Starlight" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 8305 ;
+        oa:end 8319 ;
+        oa:exact "Lady Starlight"
+    ] .
+
+person:David_Bowie a musicians:Person ;
+    rdfs:label "David Bowie"@en ;
+    schema:name "David Bowie" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 8833 ;
+        oa:end 8844 ;
+        oa:exact "David Bowie"
+    ] .
+
+person:Vincent_Herbert a musicians:Person ;
+    rdfs:label "Vincent Herbert"@en ;
+    schema:name "Vincent Herbert" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9026 ;
+        oa:end 9041 ;
+        oa:exact "Vincent Herbert"
+    ] .
+
+person:Britney_Spears a musicians:Person ;
+    rdfs:label "Britney Spears"@en ;
+    schema:name "Britney Spears" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9436 ;
+        oa:end 9450 ;
+        oa:exact "Britney Spears"
+    ] .
+
+person:Fergie a musicians:Person ;
+    rdfs:label "Fergie"@en ;
+    schema:name "Fergie" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9475 ;
+        oa:end 9481 ;
+        oa:exact "Fergie"
+    ] .
+
+person:Akon a musicians:Person ;
+    rdfs:label "Akon"@en ;
+    schema:name "Akon" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9531 ;
+        oa:end 9535 ;
+        oa:exact "Akon"
+    ] .
+
+person:Jimmy_Iovine a musicians:Person ;
+    rdfs:label "Jimmy Iovine"@en ;
+    schema:name "Jimmy Iovine" ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9657 ;
+        oa:end 9669 ;
+        oa:exact "Jimmy Iovine"
+    ] .
+
+person:RedOne a musicians:Person ;
+    rdfs:label "RedOne"@en ;
+    schema:name "RedOne" ;
+    musicians:hasCareer career:RedOne_career ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9928 ;
+        oa:end 9934 ;
+        oa:exact "RedOne"
+    ] .
+
+career:RedOne_career a musicians:MusicalCareer ;
+    rdfs:label "RedOne musical career"@en ;
+    musicians:hasRole musicians:Songwriter,
+        musicians:MusicProducer ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9904 ;
+        oa:end 9934 ;
+        oa:exact "songwriter and producer RedOne"
+    ] .
+
+person:Martin_Kierszenbaum a musicians:Person ;
+    rdfs:label "Martin Kierszenbaum"@en ;
+    schema:name "Martin Kierszenbaum" ;
+    musicians:hasCareer career:Martin_Kierszenbaum_career ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 10111 ;
+        oa:end 10130 ;
+        oa:exact "Martin Kierszenbaum"
+    ] .
+
+career:Martin_Kierszenbaum_career a musicians:MusicalCareer ;
+    rdfs:label "Martin Kierszenbaum musical career"@en ;
+    musicians:hasRole musicians:Songwriter,
+        musicians:MusicProducer ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 10087 ;
+        oa:end 10130 ;
+        oa:exact "producer and songwriter Martin Kierszenbaum"
+    ] .
+
+band:Queen a musicians:Band ;
+    rdfs:label "Queen"@en ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 7388 ;
+        oa:end 7393 ;
+        oa:exact "Queen"
+    ] .
+
+band:New_Kids_on_the_Block a musicians:Band ;
+    rdfs:label "New Kids on the Block"@en ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9452 ;
+        oa:end 9473 ;
+        oa:exact "New Kids on the Block"
+    ] .
+
+band:the_Pussycat_Dolls a musicians:Band ;
+    rdfs:label "the Pussycat Dolls"@en ;
+    prov:wasGeneratedBy extraction:Lady_Gaga_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Lady_Gaga_Wikipedia ;
+        oa:start 9487 ;
+        oa:end 9505 ;
+        oa:exact "the Pussycat Dolls"
+    ] .
+
+# Gaps:
+# - Albums, songs, awards, charts, foundations, record labels, tours, concerts, television series, genres,
+#   occupations such as "actress" and "rapper", and non-musical social activism facts are present in the text
+#   but are not represented as extractable classes/properties in the supplied ontology.
+# - The article states collaborations and influences, but the supplied ontology has no collaboration,
+#   influencedBy, award, album, song, or genre properties, so those facts are not encoded.

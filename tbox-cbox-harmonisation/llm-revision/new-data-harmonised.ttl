@@ -1,0 +1,287 @@
+@prefix data: <https://www.knowledge-graph-guys.com/music-ontology/data#> .
+@prefix inst: <http://instruments.knowledge-graph-guys.com/> .
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix schema: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+data:andre-hazes-wikipedia a prov:Entity ;
+    schema:name "André Hazes - Wikipedia" ;
+    schema:url <https://en.wikipedia.org/wiki/Andr%C3%A9_Hazes> .
+
+data:mick-jagger-wikipedia a prov:Entity ;
+    schema:name "Mick Jagger - Wikipedia" ;
+    schema:url <https://en.wikipedia.org/wiki/Mick_Jagger> .
+
+data:andre-hazes-wikipedia-mode2 a prov:Activity ;
+    rdfs:label "Mode 2 extraction from André Hazes Wikipedia article" ;
+    prov:used data:andre-hazes-wikipedia .
+
+data:mick-jagger-wikipedia-mode2 a prov:Activity ;
+    rdfs:label "Mode 2 extraction from Mick Jagger Wikipedia article" ;
+    prov:used data:mick-jagger-wikipedia .
+
+data:andre-hazes a musicians:Person ;
+    rdfs:label "André Gerardus Hazes" ;
+    schema:name "André Gerardus Hazes" ;
+    schema:alternateName "André Hazes" ;
+    schema:birthDate "1951-06-30"^^xsd:date ;
+    schema:deathDate "2004-09-23"^^xsd:date ;
+    schema:gender "Male" ;
+    musicians:hasCareer data:andre-hazes-career ;
+    musicians:hasDegreeOfFame musicians:NationalFame ;
+    musicians:plays inst:vocals ;
+    musicians:hasPrimaryInstrument inst:vocals ;
+    musicians:speaks musicians:Dutch ;
+    musicians:hasRoleInMovie data:andre-hazes-role-in-de-boezemvriend,
+        data:andre-hazes-role-in-bloed-zweet-tranen ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource data:andre-hazes-wikipedia ;
+        oa:start 0 ;
+        oa:end 20 ;
+        oa:exact "André Gerardus Hazes"
+    ] .
+
+data:andre-hazes-career a musicians:MusicalCareer ;
+    rdfs:label "André Hazes musical career" ;
+    musicians:hasRole musicians:Singer,
+        musicians:LevensliedSinger,
+        musicians:DiscJockey,
+        musicians:SingingBarman ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+inst:vocals a inst:Instrument ;
+    rdfs:label "vocals" .
+
+musicians:Dutch a musicians:Language ;
+    rdfs:label "Dutch" .
+
+data:andre-hazes-role-in-de-boezemvriend a musicians:Movie ;
+    rdfs:label "De Boezemvriend" ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:andre-hazes-role-in-bloed-zweet-tranen a musicians:Movie ;
+    rdfs:label "Bloed, zweet & tranen" ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:gerard-joling a musicians:Person ;
+    rdfs:label "Gerard Joling" ;
+    schema:name "Gerard Joling" ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:joop-hazes a musicians:Person ;
+    rdfs:label "Joop Hazes" ;
+    schema:name "Joop Hazes" ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:miep-hazes a musicians:Person ;
+    rdfs:label "Miep Hazes" ;
+    schema:name "Miep Hazes" ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:johnny-kraaykamp a musicians:Person ;
+    rdfs:label "Johnny Kraaykamp" ;
+    schema:name "Johnny Kraaykamp" ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:caterina-valente a musicians:Person ;
+    rdfs:label "Caterina Valente" ;
+    schema:name "Caterina Valente" ;
+    musicians:hasCareer data:caterina-valente-career ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:caterina-valente-career a musicians:MusicalCareer ;
+    rdfs:label "Caterina Valente musical career" ;
+    musicians:hasRole musicians:Singer .
+
+data:willy-alberti a musicians:Person ;
+    rdfs:label "Willy Alberti" ;
+    schema:name "Willy Alberti" ;
+    musicians:hasCareer data:willy-alberti-career ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:willy-alberti-career a musicians:MusicalCareer ;
+    rdfs:label "Willy Alberti musical career" ;
+    musicians:hasRole musicians:Singer .
+
+data:tim-griek a musicians:Person ;
+    rdfs:label "Tim Griek" ;
+    schema:name "Tim Griek" ;
+    musicians:hasCareer data:tim-griek-career ;
+    prov:wasGeneratedBy data:andre-hazes-wikipedia-mode2 .
+
+data:tim-griek-career a musicians:MusicalCareer ;
+    rdfs:label "Tim Griek musical career" ;
+    musicians:hasRole musicians:RecordProducer .
+
+data:aart-mol a musicians:Person ;
+    rdfs:label "Aart Mol" ;
+    schema:name "Aart Mol" .
+
+data:catapult a musicians:Band ;
+    rdfs:label "Catapult" .
+
+data:andre-van-duin a musicians:Person ;
+    rdfs:label "Andre van Duin" ;
+    schema:name "Andre van Duin" .
+
+data:joke-bruijs a musicians:Person ;
+    rdfs:label "Joke Bruijs" ;
+    schema:name "Joke Bruijs" ;
+    musicians:hasCareer data:joke-bruijs-career .
+
+data:joke-bruijs-career a musicians:MusicalCareer ;
+    rdfs:label "Joke Bruijs musical career" ;
+    musicians:hasRole musicians:Singer .
+
+data:rubberen-robbie a musicians:Band ;
+    rdfs:label "Rubberen Robbie" .
+
+data:peter-maffay a musicians:Person ;
+    rdfs:label "Peter Maffay" ;
+    schema:name "Peter Maffay" .
+
+data:gloria-gaynor a musicians:Person ;
+    rdfs:label "Gloria Gaynor" ;
+    schema:name "Gloria Gaynor" .
+
+data:herman-brood a musicians:Person ;
+    rdfs:label "Herman Brood" ;
+    schema:name "Herman Brood" .
+
+data:jan-akkerman a musicians:Person ;
+    rdfs:label "Jan Akkerman" ;
+    schema:name "Jan Akkerman" .
+
+data:joe-bourne a musicians:Person ;
+    rdfs:label "Joe Bourne" ;
+    schema:name "Joe Bourne" ;
+    musicians:hasCareer data:joe-bourne-career .
+
+data:joe-bourne-career a musicians:MusicalCareer ;
+    rdfs:label "Joe Bourne musical career" ;
+    musicians:hasRole musicians:Singer .
+
+data:kenny-rogers a musicians:Person ;
+    rdfs:label "Kenny Rogers" ;
+    schema:name "Kenny Rogers" .
+
+data:pupo a musicians:Person ;
+    rdfs:label "Pupo" ;
+    schema:name "Pupo" ;
+    musicians:hasCareer data:pupo-career .
+
+data:pupo-career a musicians:MusicalCareer ;
+    rdfs:label "Pupo musical career" ;
+    musicians:hasRole musicians:Singer .
+
+data:annie-dijkstra a musicians:Person ;
+    rdfs:label "Annie Dijkstra" ;
+    schema:name "Annie Dijkstra" .
+
+data:nathalie a musicians:Person ;
+    rdfs:label "Nathalie" ;
+    schema:name "Nathalie" .
+
+data:ellen-wolf a musicians:Person ;
+    rdfs:label "Ellen Wolf" ;
+    schema:name "Ellen Wolf" .
+
+data:melvin a musicians:Person ;
+    rdfs:label "Melvin" ;
+    schema:name "Melvin" .
+
+data:rachel-van-galen a musicians:Person ;
+    rdfs:label "Rachel van Galen" ;
+    schema:name "Rachel van Galen" .
+
+data:roxeanne a musicians:Person ;
+    rdfs:label "Roxeanne" ;
+    schema:name "Roxeanne" .
+
+data:andre-jr a musicians:Person ;
+    rdfs:label "André Jr." ;
+    schema:name "André Jr." .
+
+data:andre-iii a musicians:Person ;
+    rdfs:label "André III" ;
+    schema:name "André III" .
+
+data:mick-jagger a musicians:Person ;
+    rdfs:label "Sir Michael Philip Jagger" ;
+    schema:name "Sir Michael Philip Jagger" ;
+    schema:alternateName "Mick Jagger" ;
+    schema:birthDate "1943-07-26"^^xsd:date ;
+    musicians:hasCareer data:mick-jagger-career ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    musicians:memberOf data:the-rolling-stones ;
+    musicians:hasBandMembership data:band-membership-mick-jagger-the-rolling-stones-1962 ;
+    musicians:hasRoleInMovie data:mick-jagger-role-in-performance,
+        data:mick-jagger-role-in-ned-kelly ;
+    prov:wasGeneratedBy data:mick-jagger-wikipedia-mode2 .
+
+data:mick-jagger-career a musicians:MusicalCareer ;
+    rdfs:label "Mick Jagger musical career" ;
+    musicians:hasRole musicians:Musician,
+        musicians:Songwriter,
+        musicians:FilmProducer,
+        musicians:LeadSinger,
+        musicians:Frontman,
+        musicians:SoloArtist .
+
+data:the-rolling-stones a musicians:Band ;
+    rdfs:label "the Rolling Stones" ;
+    schema:alternateName "the Stones" .
+
+data:band-membership-mick-jagger-the-rolling-stones-1962 a musicians:BandMembership ;
+    rdfs:label "Mick Jagger membership in the Rolling Stones" ;
+    musicians:membershipBand data:the-rolling-stones ;
+    musicians:membershipStartDate "1962"^^xsd:gYear ;
+    prov:wasGeneratedBy data:mick-jagger-wikipedia-mode2 .
+
+data:keith-richards a musicians:Person ;
+    rdfs:label "Keith Richards" ;
+    schema:name "Keith Richards" ;
+    musicians:hasCareer data:keith-richards-career .
+
+data:keith-richards-career a musicians:MusicalCareer ;
+    rdfs:label "Keith Richards musical career" ;
+    musicians:hasRole musicians:LeadGuitarist ;
+    musicians:hasPrimaryInstrument inst:guitar .
+
+inst:guitar a inst:Instrument ;
+    rdfs:label "guitar" .
+
+data:mick-jagger-role-in-performance a musicians:Movie ;
+    rdfs:label "Performance" .
+
+data:mick-jagger-role-in-ned-kelly a musicians:Movie ;
+    rdfs:label "Ned Kelly" .
+
+data:david-bowie a musicians:Person ;
+    rdfs:label "David Bowie" ;
+    schema:name "David Bowie" .
+
+data:superheavy a musicians:Band ;
+    rdfs:label "SuperHeavy" .
+
+data:band-membership-mick-jagger-superheavy-2009 a musicians:BandMembership ;
+    rdfs:label "Mick Jagger membership in SuperHeavy" ;
+    musicians:membershipBand data:superheavy ;
+    musicians:membershipStartDate "2009"^^xsd:gYear ;
+    musicians:membershipEndDate "2011"^^xsd:gYear ;
+    prov:wasGeneratedBy data:mick-jagger-wikipedia-mode2 .
+
+data:bianca-perez-mora-macias a musicians:Person ;
+    rdfs:label "Bianca Pérez-Mora Macias" ;
+    schema:name "Bianca Pérez-Mora Macias" .
+
+# Ambiguities flagged for human review:
+# - data:nathalie: article context does not provide full identity.
+# - data:melvin: article context does not provide full identity.
+# - data:roxeanne: likely Roxeanne Hazes, but source surface form is only "Roxeanne".
+# - data:andre-jr: likely André Hazes Jr., but source surface form is "André Jr.".
+# - data:andre-iii: likely a family member of André Hazes Jr., but source surface form is only "André III".

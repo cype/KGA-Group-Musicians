@@ -1,0 +1,223 @@
+@prefix person: <https://www.knowledge-graph-guys.com/music-ontology/data/person/> .
+@prefix band: <https://www.knowledge-graph-guys.com/music-ontology/data/band/> .
+@prefix career: <https://www.knowledge-graph-guys.com/music-ontology/data/musical-career/> .
+@prefix membership: <https://www.knowledge-graph-guys.com/music-ontology/data/band-membership/> .
+@prefix movie: <https://www.knowledge-graph-guys.com/music-ontology/data/movie/> .
+@prefix extraction: <https://www.knowledge-graph-guys.com/music-ontology/data/extraction/> .
+@prefix source: <https://www.knowledge-graph-guys.com/music-ontology/data/source/> .
+@prefix inst: <http://instruments.knowledge-graph-guys.com/> .
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix schema: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+source:Mick_Jagger_Wikipedia a prov:Entity ;
+    schema:name "Mick Jagger - Wikipedia" ;
+    schema:url <https://en.wikipedia.org/wiki/Mick_Jagger> .
+
+extraction:Mick_Jagger_Wikipedia_Mode2 a prov:Activity ;
+    rdfs:label "Mode 2 extraction from Mick Jagger Wikipedia article" ;
+    prov:used source:Mick_Jagger_Wikipedia .
+
+person:Sir_Michael_Philip_Jagger a musicians:Person ;
+    rdfs:label "Sir Michael Philip Jagger" ;
+    schema:name "Sir Michael Philip Jagger" ;
+    schema:alternateName "Mick Jagger" ;
+    schema:birthDate "1943-07-26"^^xsd:date ;
+    musicians:hasCareer career:Mick_Jagger_career ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    musicians:memberOf band:the_Rolling_Stones ;
+    musicians:hasBandMembership membership:Mick_Jagger_the_Rolling_Stones_1962 ;
+    musicians:hasRoleInMovie movie:Performance,
+        movie:Ned_Kelly ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 0 ;
+        oa:end 25 ;
+        oa:exact "Sir Michael Philip Jagger"
+    ], [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 167 ;
+        oa:end 173 ;
+        oa:exact "Jagger"
+    ] .
+
+career:Mick_Jagger_career a musicians:MusicalCareer ;
+    rdfs:label "Mick Jagger musical career" ;
+    musicians:hasRole musicians:Musician,
+        musicians:Songwriter,
+        musicians:FilmProducer,
+        musicians:LeadSinger,
+        musicians:Frontman,
+        musicians:SoloArtist ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 60 ;
+        oa:end 68 ;
+        oa:exact "musician"
+    ], [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 70 ;
+        oa:end 80 ;
+        oa:exact "songwriter"
+    ], [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 86 ;
+        oa:end 99 ;
+        oa:exact "film producer"
+    ], [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 113 ;
+        oa:end 124 ;
+        oa:exact "lead singer"
+    ], [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 456 ;
+        oa:end 465 ;
+        oa:exact "front men"
+    ], [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 2071 ;
+        oa:end 2082 ;
+        oa:exact "solo artist"
+    ] .
+
+band:the_Rolling_Stones a musicians:Band ;
+    rdfs:label "the Rolling Stones" ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 147 ;
+        oa:end 165 ;
+        oa:exact "the Rolling Stones"
+    ], [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 197 ;
+        oa:end 207 ;
+        oa:exact "the Stones"
+    ] .
+
+membership:Mick_Jagger_the_Rolling_Stones_1962 a musicians:BandMembership ;
+    rdfs:label "Mick Jagger membership in the Rolling Stones" ;
+    musicians:membershipBand band:the_Rolling_Stones ;
+    musicians:membershipStartDate "1962"^^xsd:gYear ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 129 ;
+        oa:end 165 ;
+        oa:exact "founder member of the Rolling Stones"
+    ] .
+
+person:Keith_Richards a musicians:Person ;
+    rdfs:label "Keith Richards" ;
+    schema:name "Keith Richards" ;
+    musicians:hasCareer career:Keith_Richards_career ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 235 ;
+        oa:end 249 ;
+        oa:exact "Keith Richards"
+    ] .
+
+career:Keith_Richards_career a musicians:MusicalCareer ;
+    rdfs:label "Keith Richards musical career" ;
+    musicians:hasRole musicians:LeadGuitarist ;
+    musicians:hasPrimaryInstrument inst:guitar ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 220 ;
+        oa:end 234 ;
+        oa:exact "lead guitarist"
+    ], [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 573 ;
+        oa:end 579 ;
+        oa:exact "guitar"
+    ] .
+
+inst:guitar a inst:Instrument ;
+    rdfs:label "guitar" ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 573 ;
+        oa:end 579 ;
+        oa:exact "guitar"
+    ] .
+
+movie:Performance a musicians:Movie ;
+    rdfs:label "Performance" ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 1024 ;
+        oa:end 1035 ;
+        oa:exact "Performance"
+    ] .
+
+movie:Ned_Kelly a musicians:Movie ;
+    rdfs:label "Ned Kelly" ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 1047 ;
+        oa:end 1056 ;
+        oa:exact "Ned Kelly"
+    ] .
+
+person:David_Bowie a musicians:Person ;
+    rdfs:label "David Bowie" ;
+    schema:name "David Bowie" ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 1225 ;
+        oa:end 1236 ;
+        oa:exact "David Bowie"
+    ] .
+
+band:SuperHeavy a musicians:Band ;
+    rdfs:label "SuperHeavy" ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 1530 ;
+        oa:end 1540 ;
+        oa:exact "SuperHeavy"
+    ] .
+
+membership:Mick_Jagger_SuperHeavy_2009 a musicians:BandMembership ;
+    rdfs:label "Mick Jagger membership in SuperHeavy" ;
+    musicians:membershipBand band:SuperHeavy ;
+    musicians:membershipStartDate "2009"^^xsd:gYear ;
+    musicians:membershipEndDate "2011"^^xsd:gYear ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 1509 ;
+        oa:end 1559 ;
+        oa:exact "member of the supergroup SuperHeavy from 2009 to 2011"
+    ] .
+
+person:Bianca_Perez_Mora_Macias a musicians:Person ;
+    rdfs:label "Bianca Pérez-Mora Macias" ;
+    schema:name "Bianca Pérez-Mora Macias" ;
+    prov:wasGeneratedBy extraction:Mick_Jagger_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Mick_Jagger_Wikipedia ;
+        oa:start 1774 ;
+        oa:end 1798 ;
+        oa:exact "Bianca Pérez-Mora Macias"
+    ] .
+
+# Gaps:
+# - Songs, albums, awards, halls of fame, knighthood, record companies,
+#   family relationships, and film-production companies are mentioned but
+#   are not cleanly represented by the supplied ontology classes/properties.

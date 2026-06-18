@@ -1,0 +1,700 @@
+@prefix data: <https://www.knowledge-graph-guys.com/music-ontology/data#> .
+@prefix imdb: <https://www.imdb.com/title/> .
+@prefix inst: <http://instruments.knowledge-graph-guys.com/> .
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+data:andre-hazes a musicians:Person ;
+    schema1:birthDate "1951-06-30"^^xsd:date ;
+    schema1:deathDate "2004-09-23"^^xsd:date ;
+    schema1:familyName "Hazes" ;
+    schema1:gender "Male" ;
+    schema1:givenName "André" ;
+    musicians:hasCareer data:andre-hazes-career ;
+    musicians:hasDegreeOfFame musicians:NationalFame ;
+    musicians:hasPrimaryInstrument inst:vocals ;
+    musicians:plays inst:vocals ;
+    musicians:speaks musicians:Dutch .
+
+data:madonna a musicians:Person ;
+    schema1:additionalName "Louise" ;
+    schema1:birthDate "1958-08-16"^^xsd:date ;
+    schema1:familyName "Ciccone" ;
+    schema1:gender "Female" ;
+    schema1:givenName "Madonna" ;
+    musicians:hasCareer data:madonna-career ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    musicians:hasPrimaryInstrument inst:vocals ;
+    musicians:plays inst:vocals ;
+    musicians:speaks musicians:English .
+
+data:paul-mccartney a musicians:Person ;
+    schema1:birthDate "1942-06-18"^^xsd:date ;
+    schema1:familyName "McCartney" ;
+    schema1:gender "Male" ;
+    schema1:givenName "Paul" ;
+    musicians:hasBandMembership data:band-membership-paul-mccartney-the-beatles-1960-01-01,
+        data:band-membership-paul-mccartney-wings-1971-01-01 ;
+    musicians:hasCareer data:paul-mccartney-career-beatles,
+        data:paul-solo-career ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    musicians:hasPrimaryInstrument inst:bass-guitar ;
+    musicians:hasRoleInMovie data:paul-mccartney-role-in-the-beatles-better-movie,
+        data:paul-mccartney-role-in-the-beatles-movie ;
+    musicians:memberOf data:the-beatles,
+        data:wings ;
+    musicians:plays inst:bass-guitar ;
+    musicians:speaks musicians:English .
+
+data:sting a musicians:Person ;
+    rdfs:label "Sting"@en ;
+    musicians:hasBandMembership data:band-membership-sting-the-police-1977-01-01 ;
+    musicians:memberOf data:the-police .
+
+data:taylor-swift a musicians:Person ;
+    schema1:birthDate "1989-12-13"^^xsd:date ;
+    schema1:familyName "Swift" ;
+    schema1:gender "Female" ;
+    schema1:givenName "Taylor" ;
+    musicians:hasCareer data:taylor-swift-career ;
+    musicians:hasDegreeOfFame musicians:InternationalFame ;
+    musicians:hasPrimaryInstrument inst:guitar ;
+    musicians:hasRoleInMovie data:taylor-swift-role-in-the-movie-a-beautiful-day-in-the-neighborhood ;
+    musicians:plays inst:guitar ;
+    musicians:speaks musicians:English .
+
+musicians:hasBandMembership a owl:ObjectProperty ;
+    rdfs:domain musicians:Person ;
+    rdfs:range musicians:BandMembership .
+
+musicians:hasCareer a owl:ObjectProperty ;
+    rdfs:domain musicians:Person ;
+    rdfs:range musicians:MusicalCareer .
+
+musicians:hasDegreeOfFame a owl:ObjectProperty ;
+    rdfs:domain musicians:Person ;
+    rdfs:range musicians:DegreeOfFame .
+
+musicians:hasGender a owl:DatatypeProperty ;
+    rdfs:domain musicians:Person ;
+    rdfs:range xsd:string .
+
+musicians:hasPrimaryInstrument a owl:ObjectProperty ;
+    rdfs:label "has primary instrument"@en ;
+    rdfs:domain musicians:Person ;
+    rdfs:range inst:Instrument .
+
+musicians:hasRole a owl:ObjectProperty ;
+    rdfs:domain musicians:MusicalCareer ;
+    rdfs:range musicians:MusicalRole .
+
+musicians:hasRoleInMovie a owl:ObjectProperty ;
+    rdfs:domain musicians:Person ;
+    rdfs:range musicians:Movie .
+
+musicians:memberOf a owl:ObjectProperty ;
+    rdfs:domain musicians:Person ;
+    rdfs:range musicians:Band .
+
+musicians:membershipBand a owl:ObjectProperty ;
+    rdfs:domain musicians:BandMembership ;
+    rdfs:range musicians:Band .
+
+musicians:membershipEndDate a owl:DatatypeProperty ;
+    rdfs:domain musicians:BandMembership ;
+    rdfs:range xsd:date .
+
+musicians:membershipStartDate a owl:DatatypeProperty ;
+    rdfs:domain musicians:BandMembership ;
+    rdfs:range xsd:date .
+
+musicians:plays a owl:ObjectProperty ;
+    rdfs:label "plays"@en ;
+    rdfs:domain musicians:Person ;
+    rdfs:range inst:Instrument .
+
+musicians:speaks a owl:ObjectProperty ;
+    rdfs:domain musicians:Person ;
+    rdfs:range musicians:Language .
+
+data:andre-hazes-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:Melodist,
+        musicians:PopSinger,
+        musicians:Songwriter .
+
+data:band-membership-paul-mccartney-the-beatles-1960-01-01 a musicians:BandMembership ;
+    musicians:membershipBand data:the-beatles ;
+    musicians:membershipEndDate "1970-04-10"^^xsd:date ;
+    musicians:membershipStartDate "1960-01-01"^^xsd:date .
+
+data:band-membership-paul-mccartney-wings-1971-01-01 a musicians:BandMembership ;
+    musicians:membershipBand data:wings ;
+    musicians:membershipEndDate "1981-04-27"^^xsd:date ;
+    musicians:membershipStartDate "1971-01-01"^^xsd:date .
+
+data:band-membership-sting-the-police-1977-01-01 a musicians:BandMembership ;
+    musicians:membershipBand data:the-police ;
+    musicians:membershipEndDate "1986-03-01"^^xsd:date ;
+    musicians:membershipStartDate "1977-01-01"^^xsd:date .
+
+data:madonna-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:Melodist,
+        musicians:MusicProducer,
+        musicians:PopSinger,
+        musicians:Songwriter .
+
+data:paul-mccartney-career-beatles a musicians:MusicalCareer ;
+    musicians:hasRole musicians:RockSinger .
+
+data:paul-mccartney-role-in-the-beatles-better-movie a musicians:Movie ;
+    rdfs:label "A Hard Days Night"@en ;
+    schema1:sameAs imdb:tt0058182 ;
+    rdfs:comment "A 1964 film featuring the music of The Beatles."@en .
+
+data:paul-mccartney-role-in-the-beatles-movie a musicians:Movie ;
+    rdfs:label "Yellow Submarine"@en ;
+    schema1:sameAs imdb:tt0063823 ;
+    rdfs:comment "A 1968 animated film featuring the music of The Beatles."@en .
+
+data:paul-solo-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:Vocalist .
+
+data:taylor-swift-career a musicians:MusicalCareer ;
+    musicians:hasRole musicians:Melodist,
+        musicians:PopSinger,
+        musicians:Songwriter .
+
+data:taylor-swift-role-in-the-movie-a-beautiful-day-in-the-neighborhood a musicians:Movie ;
+    rdfs:label "A Beautiful Day in the Neighborhood"@en ;
+    schema1:sameAs imdb:tt3224458 ;
+    rdfs:comment "A 2019 biographical film about the life and career of Fred Rogers, in which Taylor Swift played the role of Miss Thang."@en .
+
+musicians:Afrikaans a skos:Concept ;
+    skos:broader musicians:Dutch ;
+    skos:definition "A daughter language of Dutch that developed in South Africa from 17th-century Early Modern Dutch dialects brought by European settlers."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Afrikaans"@en .
+
+musicians:AmericanEnglish a skos:Concept ;
+    skos:broader musicians:English ;
+    skos:definition "The variety of the English language native to the United States."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "American English"@en .
+
+musicians:BrazilianPortuguese a skos:Concept ;
+    skos:broader musicians:Portuguese ;
+    skos:definition "The variety of the Portuguese language spoken in Brazil."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Brazilian Portuguese"@en .
+
+musicians:BritishEnglish a skos:Concept ;
+    skos:broader musicians:English ;
+    skos:definition "The variety of the English language native to the United Kingdom."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "British English"@en .
+
+musicians:CastilianSpanish a skos:Concept ;
+    skos:broader musicians:Spanish ;
+    skos:definition "The variety of the Spanish language spoken in northern and central Spain, often considered the standard form."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Castilian Spanish"@en .
+
+musicians:Drummer a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Instrumentalist ;
+    skos:definition "A person who plays the drums."@en ;
+    skos:exactMatch wd:Q386854 ;
+    skos:prefLabel "Schlagzeuger"@de,
+        "Drummer"@en .
+
+musicians:EgyptianArabic a skos:Concept ;
+    skos:broader musicians:Arabic ;
+    skos:definition "The vernacular spoken variety of Arabic native to Egypt, widely understood across the Arab world due to media and cinema influence."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Egyptian Arabic"@en .
+
+musicians:EuropeanPortuguese a skos:Concept ;
+    skos:broader musicians:Portuguese ;
+    skos:definition "The variety of the Portuguese language spoken in Portugal."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "European Portuguese"@en .
+
+musicians:ExecutiveProducer a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:MusicProducer ;
+    skos:definition "A producer responsible for financing, administration, or overall project supervision of music productions."@en ;
+    skos:exactMatch wd:Q1053574 ;
+    skos:prefLabel "Executive Producer"@de,
+        "Executive Producer"@en .
+
+musicians:Flemish a skos:Concept ;
+    skos:broader musicians:Dutch ;
+    skos:definition "The regional variety of the Dutch language spoken in Flanders, Belgium."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Flemish"@en .
+
+musicians:Guitarist a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Instrumentalist ;
+    skos:definition "A person who plays the guitar."@en ;
+    skos:exactMatch wd:Q855091 ;
+    skos:prefLabel "Gitarrist"@de,
+        "Guitarist"@en .
+
+musicians:HighGerman a skos:Concept ;
+    skos:broader musicians:German ;
+    skos:definition "The standard variety of the German language used in education, literature, and public communication."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "High German"@en .
+
+musicians:HookMelodist a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Melodist ;
+    skos:definition "A person who writes catchy melodies."@en ;
+    skos:prefLabel "Hook-Melodist"@de,
+        "Hook Melodist"@en .
+
+musicians:KansaiDialect a skos:Concept ;
+    skos:broader musicians:Japanese ;
+    skos:definition "A prominent regional group of Japanese dialects spoken in the Kansai region, including Osaka, Kyoto, and Kobe."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Kansai Dialect"@en .
+
+musicians:Kiunguja a skos:Concept ;
+    skos:broader musicians:Swahili ;
+    skos:definition "The specific dialect of Swahili spoken in Zanzibar Town, which serves as the principal foundation for Modern Standard Swahili."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Kiunguja"@en .
+
+musicians:LatinAmericanSpanish a skos:Concept ;
+    skos:broader musicians:Spanish ;
+    skos:definition "The regional variants of the Spanish language spoken in the countries of Hispanic America."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Latin American Spanish"@en .
+
+musicians:Limburgs a skos:Concept ;
+    skos:broader musicians:Dutch ;
+    skos:definition "The standard variety of the Dutch language as spoken in the Province of Limburg."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Limburgs"@en .
+
+musicians:LocalFame a musicians:DegreeOfFame ;
+    rdfs:label "Local Fame"@en .
+
+musicians:Lyricist a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Songwriter ;
+    skos:definition "A person who writes lyrics for songs."@en ;
+    skos:exactMatch wd:Q822146 ;
+    skos:prefLabel "Songtexter"@de,
+        "Lyricist"@en .
+
+musicians:ModernStandardArabic a skos:Concept ;
+    skos:broader musicians:Arabic ;
+    skos:definition "The standardized literary variety of Arabic used throughout the Arab world in writing, formal speech, and broadcasting."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Modern Standard Arabic"@en .
+
+musicians:OperaSinger a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Singer ;
+    skos:definition "A singer who performs opera and classical vocal repertoire."@en ;
+    skos:exactMatch wd:Q2865819 ;
+    skos:prefLabel "Opernsänger"@de,
+        "Opera Singer"@en ;
+    skos:scopeNote "Used for persons whose primary musical activity is performing opera roles."@en .
+
+musicians:ParisianFrench a skos:Concept ;
+    skos:broader musicians:French ;
+    skos:definition "The standard variety of the French language spoken in and around Paris."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Parisian French"@en .
+
+musicians:Pianist a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Instrumentalist ;
+    skos:definition "A person who plays the piano."@en ;
+    skos:exactMatch wd:Q486748 ;
+    skos:prefLabel "Pianist"@de,
+        "Pianist"@en .
+
+musicians:PianoTeacher a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:MusicTeacher ;
+    skos:closeMatch wd:Q17303149 ;
+    skos:definition "A music teacher who teaches students how to play the piano."@en ;
+    skos:prefLabel "Klavierlehrer"@de,
+        "Piano Teacher"@en .
+
+musicians:QuebecFrench a skos:Concept ;
+    skos:broader musicians:French ;
+    skos:definition "The dominant variety of the French language spoken in Canada."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Quebec French"@en .
+
+musicians:RecordProducer a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:MusicProducer ;
+    skos:definition "A music producer who supervises and directs the artistic and technical aspects of recording music."@en ;
+    skos:exactMatch wd:Q183945 ;
+    skos:prefLabel "Tonträgerproduzent"@de,
+        "Record Producer"@en .
+
+musicians:StandardJapanese a skos:Concept ;
+    skos:broader musicians:Japanese ;
+    skos:definition "The official and literary form of the Japanese language, based largely on the historical dialect spoken in Tokyo."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Standard Japanese"@en .
+
+musicians:StandardMandarin a skos:Concept ;
+    skos:broader musicians:MandarinChinese ;
+    skos:definition "The official standardized language of mainland China, structured around the phonology of the Beijing dialect."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Standard Mandarin"@en .
+
+musicians:StandardRussian a skos:Concept ;
+    skos:broader musicians:Russian ;
+    skos:definition "The modern literary and official variant of the Russian language."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Standard Russian"@en .
+
+musicians:SwissGerman a skos:Concept ;
+    skos:broader musicians:German ;
+    skos:definition "The Alemannic dialects spoken in the German-speaking parts of Switzerland."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Swiss German"@en .
+
+musicians:TaiwaneseMandarin a skos:Concept ;
+    skos:broader musicians:MandarinChinese ;
+    skos:definition "The official variant of Mandarin Chinese spoken and written in Taiwan, showing distinct lexical and phonological features."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:prefLabel "Taiwanese Mandarin"@en .
+
+musicians:Violinist a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Instrumentalist ;
+    skos:definition "A person who plays the violin."@en ;
+    skos:exactMatch wd:Q1259917 ;
+    skos:prefLabel "Geiger"@de,
+        "Violinist"@en .
+
+musicians:VocalCoach a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:MusicTeacher ;
+    skos:definition "A music teacher who trains singers in vocal technique, interpretation, and performance."@en ;
+    skos:exactMatch wd:Q20971450 ;
+    skos:prefLabel "Gesangscoach"@de,
+        "Vocal Coach"@en .
+
+musicians:VocalMelodist a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Melodist ;
+    skos:definition "Writes melodies specifically for singers."@en ;
+    skos:prefLabel "Vocal-Melodist"@de,
+        "Vocal Melodist"@en .
+
+data:the-beatles a musicians:Band ;
+    rdfs:label "The Beatles"@en .
+
+data:the-police a musicians:Band ;
+    rdfs:label "The Police"@en .
+
+data:wings a musicians:Band ;
+    rdfs:label "Wings"@en .
+
+musicians:AfricanLanguages a skos:Concept ;
+    skos:definition "Languages native to the African continent, spanning major phyla such as Niger-Congo, Afroasiatic, and Nilo-Saharan."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:Swahili ;
+    skos:prefLabel "African Languages"@en ;
+    skos:topConceptOf musicians:Languages .
+
+musicians:MiddleEasternLanguages a skos:Concept ;
+    skos:definition "Languages originating from and predominantly spoken in the Middle East, including the Semitic and Iranian language branches."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:Arabic ;
+    skos:prefLabel "Middle Eastern Languages"@en ;
+    skos:topConceptOf musicians:Languages .
+
+musicians:NationalFame a musicians:DegreeOfFame ;
+    rdfs:label "National Fame"@en .
+
+musicians:RockSinger a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Singer ;
+    skos:definition "A singer who performs rock music."@en ;
+    skos:exactMatch wd:Q104218554 ;
+    skos:prefLabel "Rock-Sänger"@de,
+        "Rock Singer"@en ;
+    skos:scopeNote "Used for persons who specialize in performing rock music."@en .
+
+musicians:Russian a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:definition "An East Slavic language written in the Cyrillic script, serving as a major regional language across Eastern Europe and Northern Asia."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:StandardRussian ;
+    skos:prefLabel "Russian"@en .
+
+musicians:Swahili a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:AfricanLanguages ;
+    skos:definition "A Bantu lingua franca spoken extensively across East Africa, serving as a vital regional vehicle for trade, administration, and education."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:Kiunguja ;
+    skos:prefLabel "Swahili"@en .
+
+musicians:Arabic a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:MiddleEasternLanguages ;
+    skos:definition "A Semitic language originating from the Arabian Peninsula, widely used across the Middle East and North Africa as a liturgical and official language."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:EgyptianArabic,
+        musicians:ModernStandardArabic ;
+    skos:prefLabel "Arabic"@en .
+
+musicians:AsianLanguages a skos:Concept ;
+    skos:definition "Major languages originating from East, South, and Southeast Asia, representing diverse language families like Sino-Tibetan and Indo-Aryan."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:Japanese,
+        musicians:MandarinChinese ;
+    skos:prefLabel "Asian Languages"@en ;
+    skos:topConceptOf musicians:Languages .
+
+musicians:French a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:definition "A Romance language originating in France, historically used as a primary language of diplomacy and international relations."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:ParisianFrench,
+        musicians:QuebecFrench ;
+    skos:prefLabel "French"@en .
+
+musicians:German a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:definition "A Germanic language spoken primarily in Central Europe, acting as a major language of philosophy, engineering, and commerce."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:HighGerman,
+        musicians:SwissGerman ;
+    skos:prefLabel "German"@en .
+
+musicians:Japanese a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:AsianLanguages ;
+    skos:definition "An East Asian language spoken primarily in Japan, characterized by a complex system of honorifics and a distinct tripartite writing system."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:KansaiDialect,
+        musicians:StandardJapanese ;
+    skos:prefLabel "Japanese"@en .
+
+musicians:MandarinChinese a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:AsianLanguages ;
+    skos:definition "A Sinitic language forming the most spoken branch of Chinese, serving as the official national language of China and Taiwan."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:StandardMandarin,
+        musicians:TaiwaneseMandarin ;
+    skos:prefLabel "Mandarin Chinese"@en .
+
+musicians:MusicTeacher a skos:Concept,
+        musicians:MusicalRole ;
+    skos:definition "A person who teaches music."@en ;
+    skos:exactMatch wd:Q2675537 ;
+    skos:narrower musicians:PianoTeacher,
+        musicians:VocalCoach ;
+    skos:prefLabel "Musiklehrer"@de,
+        "Music Teacher"@en ;
+    skos:topConceptOf musicians:MusicalRoles .
+
+musicians:Portuguese a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:definition "A Romance language originating from the Western Iberian Peninsula, widespread across South America, Africa, and Europe."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:BrazilianPortuguese,
+        musicians:EuropeanPortuguese ;
+    skos:prefLabel "Portuguese"@en .
+
+musicians:Spanish a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:definition "A Romance language originating from the Iberian Peninsula, widely spoken across the Americas and Europe."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:CastilianSpanish,
+        musicians:LatinAmericanSpanish ;
+    skos:prefLabel "Spanish"@en .
+
+musicians:DegreeOfFame a owl:Class ;
+    rdfs:label "Grad der Berühmtheit"@de,
+        "Degree of Fame"@en ;
+    rdfs:comment "The level of recognition and popularity a person has achieved in their musical career."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology ;
+    owl:oneOf ( musicians:LocalFame musicians:NationalFame musicians:InternationalFame ) .
+
+musicians:InternationalFame a musicians:DegreeOfFame ;
+    rdfs:label "International Fame"@en .
+
+musicians:Movie a owl:Class ;
+    rdfs:label "Film"@de,
+        "Movie"@en ;
+    rdfs:comment "A motion picture or film."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology ;
+    rdfs:subClassOf schema1:Movie .
+
+musicians:MusicProducer a skos:Concept,
+        musicians:MusicalRole ;
+    skos:definition "A person who oversees and manages the creation and production of music recordings."@en ;
+    skos:narrower musicians:ExecutiveProducer,
+        musicians:RecordProducer ;
+    skos:prefLabel "Musikproduzent"@de,
+        "Music Producer"@en ;
+    skos:topConceptOf musicians:MusicalRoles .
+
+musicians:PopSinger a skos:Concept,
+        musicians:MusicalRole ;
+    skos:broader musicians:Singer ;
+    skos:definition "A singer who performs pop music."@en ;
+    skos:exactMatch wd:Q60723829 ;
+    skos:prefLabel "Pop-Sänger"@de,
+        "Pop Singer"@en ;
+    skos:scopeNote "Used for persons who specialize in performing pop music."@en .
+
+musicians:Singer a skos:Concept,
+        musicians:MusicalRole ;
+    skos:definition "A person who performs songs, typically with a focus on vocal ability."@en ;
+    skos:exactMatch wd:Q177220 ;
+    skos:narrower musicians:OperaSinger,
+        musicians:PopSinger,
+        musicians:RockSinger ;
+    skos:prefLabel "Sänger"@de,
+        "Singer"@en ;
+    skos:scopeNote "Used for persons whose primary musical activity is vocal performance, either as solo artists or members of musical groups."@en ;
+    skos:topConceptOf musicians:MusicalRoles .
+
+musicians:Band a owl:Class ;
+    rdfs:label "Band"@en .
+
+musicians:Dutch a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:definition "A West Germanic language spoken primarily in the Netherlands and Belgium, playing a significant role in maritime history and European trade."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:Afrikaans,
+        musicians:Flemish,
+        musicians:Limburgs ;
+    skos:prefLabel "Dutch"@en .
+
+musicians:Instrumentalist a skos:Concept,
+        musicians:MusicalRole ;
+    skos:definition "A person who plays a musical instrument."@en ;
+    skos:exactMatch wd:Q1278335 ;
+    skos:narrower musicians:Drummer,
+        musicians:Guitarist,
+        musicians:Pianist,
+        musicians:Violinist ;
+    skos:prefLabel "Instrumentalist"@de,
+        "Instrumentalist"@en ;
+    skos:topConceptOf musicians:MusicalRoles .
+
+musicians:Songwriter a skos:Concept,
+        musicians:MusicalRole ;
+    skos:definition "A person who writes songs."@en ;
+    skos:exactMatch wd:Q753110 ;
+    skos:narrower musicians:Lyricist ;
+    skos:prefLabel "Songwriter"@de,
+        "Songwriter"@en ;
+    skos:topConceptOf musicians:MusicalRoles .
+
+musicians:English a skos:Concept,
+        musicians:Language ;
+    skos:broader musicians:EuropeanLanguages ;
+    skos:definition "The most widely used international language for business, science, and media."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:AmericanEnglish,
+        musicians:BritishEnglish ;
+    skos:prefLabel "English"@en .
+
+musicians:Melodist a skos:Concept,
+        musicians:MusicalRole ;
+    skos:definition "A person who writes melodies."@en ;
+    skos:exactMatch wd:Q124738259 ;
+    skos:narrower musicians:HookMelodist,
+        musicians:VocalMelodist ;
+    skos:prefLabel "Melodist"@de,
+        "Melodist"@en ;
+    skos:topConceptOf musicians:MusicalRoles .
+
+musicians:MusicalRoles a skos:ConceptScheme ;
+    rdfs:comment "Concept definitions and mappings were developed using information from Wikidata, Wikipedia, and large language models (LLMs), followed by human review and curation."@en ;
+    skos:definition "A person who creates, performs, or is involved in music."@en ;
+    skos:exactMatch wd:Q639669 ;
+    skos:hasTopConcept musicians:Instrumentalist,
+        musicians:Melodist,
+        musicians:MusicProducer,
+        musicians:MusicTeacher,
+        musicians:Singer,
+        musicians:Songwriter ;
+    skos:prefLabel "Musikale Rollen"@de,
+        "Musical Roles"@en ;
+    skos:scopeNote "we used ChatGPT"@en .
+
+musicians:MusicianOntology a owl:Ontology ;
+    rdfs:label "Musicians Ontology"@en ;
+    rdfs:comment "This ontology defines concepts related to musicians, their careers, and roles in music."@en .
+
+musicians:BandMembership a owl:Class ;
+    rdfs:label "Band Membership"@en .
+
+musicians:MusicalCareer a owl:Class ;
+    rdfs:label "Musikalische Karriere"@de,
+        "Musical Career"@en ;
+    rdfs:comment "The professional involvement of a person in musical activities."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology .
+
+musicians:EuropeanLanguages a skos:Concept ;
+    skos:definition "Major languages originating from Europe, widely used in international business, culture, and education."@en ;
+    skos:inScheme musicians:Languages ;
+    skos:narrower musicians:Dutch,
+        musicians:English,
+        musicians:French,
+        musicians:German,
+        musicians:Portuguese,
+        musicians:Russian,
+        musicians:Spanish ;
+    skos:prefLabel "European Languages"@en ;
+    skos:topConceptOf musicians:Languages .
+
+musicians:Language a owl:Class ;
+    rdfs:label "Sprache"@de,
+        "Language"@en ;
+    rdfs:comment "A system of communication used by a particular community or country."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology .
+
+musicians:Person a owl:Class ;
+    rdfs:label "Person"@de,
+        "Person"@en ;
+    rdfs:comment "An individual human being, typically involved in musical activities."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology ;
+    rdfs:subClassOf schema1:Person .
+
+musicians:MusicalRole a owl:Class ;
+    rdfs:label "Musikale Rolle"@de,
+        "Musical Role"@en ;
+    rdfs:comment "The role played by a person in musical activities."@en ;
+    rdfs:isDefinedBy musicians:MusicianOntology .
+
+musicians:Languages a skos:ConceptScheme ;
+    skos:definition "The method of human communication, either spoken or written, consisting of the use of words in a structured and conventional way."@en ;
+    skos:hasTopConcept musicians:AfricanLanguages,
+        musicians:AsianLanguages,
+        musicians:EuropeanLanguages,
+        musicians:MiddleEasternLanguages ;
+    skos:prefLabel "Language"@en .
+

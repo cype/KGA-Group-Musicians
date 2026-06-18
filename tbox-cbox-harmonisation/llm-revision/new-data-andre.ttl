@@ -1,0 +1,494 @@
+@prefix person: <https://www.knowledge-graph-guys.com/music-ontology/data/person/> .
+@prefix band: <https://www.knowledge-graph-guys.com/music-ontology/data/band/> .
+@prefix career: <https://www.knowledge-graph-guys.com/music-ontology/data/musical-career/> .
+@prefix movie: <https://www.knowledge-graph-guys.com/music-ontology/data/movie/> .
+@prefix extraction: <https://www.knowledge-graph-guys.com/music-ontology/data/extraction/> .
+@prefix source: <https://www.knowledge-graph-guys.com/music-ontology/data/source/> .
+@prefix inst: <http://instruments.knowledge-graph-guys.com/> .
+@prefix musicians: <https://www.knowledge-graph-guys.com/music-ontology/musicians#> .
+@prefix schema: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+source:Andre_Hazes_Wikipedia a prov:Entity ;
+    schema:name "André Hazes - Wikipedia" ;
+    schema:url <https://en.wikipedia.org/wiki/Andr%C3%A9_Hazes> .
+
+extraction:Andre_Hazes_Wikipedia_Mode2 a prov:Activity ;
+    rdfs:label "Mode 2 extraction from André Hazes Wikipedia article" ;
+    prov:used source:Andre_Hazes_Wikipedia .
+
+person:Andre_Gerardus_Hazes a musicians:Person ;
+    rdfs:label "André Gerardus Hazes" ;
+    schema:name "André Gerardus Hazes" ;
+    schema:alternateName "André Hazes" ;
+    schema:birthDate "1951-06-30"^^xsd:date ;
+    schema:deathDate "2004-09-23"^^xsd:date ;
+    schema:gender "Male" ;
+    musicians:hasCareer career:Andre_Hazes_career ;
+    musicians:hasDegreeOfFame musicians:NationalFame ;
+    musicians:plays inst:vocals ;
+    musicians:hasPrimaryInstrument inst:vocals ;
+    musicians:speaks musicians:Dutch ;
+    musicians:hasRoleInMovie movie:De_Boezemvriend,
+        movie:Bloed_Zweet_en_Tranen ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 0 ;
+        oa:end 20 ;
+        oa:exact "André Gerardus Hazes"
+    ], [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 62 ;
+        oa:end 67 ;
+        oa:exact "Dutch"
+    ], [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 207 ;
+        oa:end 217 ;
+        oa:exact "well-known"
+    ] .
+
+career:Andre_Hazes_career a musicians:MusicalCareer ;
+    rdfs:label "André Hazes musical career" ;
+    musicians:hasRole musicians:Singer,
+        musicians:LevensliedSinger,
+        musicians:DiscJockey,
+        musicians:SingingBarman ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 68 ;
+        oa:end 74 ;
+        oa:exact "singer"
+    ], [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 95 ;
+        oa:end 112 ;
+        oa:exact "levenslied singer"
+    ], [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 1671 ;
+        oa:end 1682 ;
+        oa:exact "disc jockey"
+    ], [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 1721 ;
+        oa:end 1735 ;
+        oa:exact "singing barman"
+    ] .
+
+inst:vocals a inst:Instrument ;
+    rdfs:label "vocals" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 68 ;
+        oa:end 74 ;
+        oa:exact "singer"
+    ] .
+
+musicians:Dutch a musicians:Language ;
+    rdfs:label "Dutch" .
+
+movie:De_Boezemvriend a musicians:Movie ;
+    rdfs:label "De Boezemvriend" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 3281 ;
+        oa:end 3296 ;
+        oa:exact "De Boezemvriend"
+    ] .
+
+movie:Bloed_Zweet_en_Tranen a musicians:Movie ;
+    rdfs:label "Bloed, zweet & tranen" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 10027 ;
+        oa:end 10048 ;
+        oa:exact "Bloed, zweet & tranen"
+    ] .
+
+person:Gerard_Joling a musicians:Person ;
+    rdfs:label "Gerard Joling" ;
+    schema:name "Gerard Joling" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 618 ;
+        oa:end 631 ;
+        oa:exact "Gerard Joling"
+    ] .
+
+person:Joop_Hazes a musicians:Person ;
+    rdfs:label "Joop Hazes" ;
+    schema:name "Joop Hazes" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 746 ;
+        oa:end 756 ;
+        oa:exact "Joop Hazes"
+    ] .
+
+person:Miep_Hazes a musicians:Person ;
+    rdfs:label "Miep Hazes" ;
+    schema:name "Miep Hazes" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 761 ;
+        oa:end 771 ;
+        oa:exact "Miep Hazes"
+    ] .
+
+person:Johnny_Kraaykamp a musicians:Person ;
+    rdfs:label "Johnny Kraaykamp" ;
+    schema:name "Johnny Kraaykamp" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 905 ;
+        oa:end 921 ;
+        oa:exact "Johnny Kraaykamp"
+    ] .
+
+person:Caterina_Valente a musicians:Person ;
+    rdfs:label "Caterina Valente" ;
+    schema:name "Caterina Valente" ;
+    musicians:hasCareer career:Caterina_Valente_career ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 1418 ;
+        oa:end 1434 ;
+        oa:exact "Caterina Valente"
+    ] .
+
+career:Caterina_Valente_career a musicians:MusicalCareer ;
+    rdfs:label "Caterina Valente musical career" ;
+    musicians:hasRole musicians:Singer ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 1404 ;
+        oa:end 1417 ;
+        oa:exact "famous singer"
+    ] .
+
+person:Willy_Alberti a musicians:Person ;
+    rdfs:label "Willy Alberti" ;
+    schema:name "Willy Alberti" ;
+    musicians:hasCareer career:Willy_Alberti_career ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 1901 ;
+        oa:end 1914 ;
+        oa:exact "Willy Alberti"
+    ] .
+
+career:Willy_Alberti_career a musicians:MusicalCareer ;
+    rdfs:label "Willy Alberti musical career" ;
+    musicians:hasRole musicians:Singer ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 1894 ;
+        oa:end 1914 ;
+        oa:exact "singer Willy Alberti"
+    ] .
+
+person:Tim_Griek a musicians:Person ;
+    rdfs:label "Tim Griek" ;
+    schema:name "Tim Griek" ;
+    musicians:hasCareer career:Tim_Griek_career ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 2592 ;
+        oa:end 2601 ;
+        oa:exact "Tim Griek"
+    ] .
+
+career:Tim_Griek_career a musicians:MusicalCareer ;
+    rdfs:label "Tim Griek musical career" ;
+    musicians:hasRole musicians:RecordProducer ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 4141 ;
+        oa:end 4183 ;
+        oa:exact "record producer and best friend Tim Griek"
+    ] .
+
+person:Aart_Mol a musicians:Person ;
+    rdfs:label "Aart Mol" ;
+    schema:name "Aart Mol" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 2917 ;
+        oa:end 2925 ;
+        oa:exact "Aart Mol"
+    ] .
+
+band:Catapult a musicians:Band ;
+    rdfs:label "Catapult" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 2965 ;
+        oa:end 2973 ;
+        oa:exact "Catapult"
+    ] .
+
+person:Andre_van_Duin a musicians:Person ;
+    rdfs:label "Andre van Duin" ;
+    schema:name "Andre van Duin" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 3329 ;
+        oa:end 3343 ;
+        oa:exact "Andre van Duin"
+    ] .
+
+person:Joke_Bruijs a musicians:Person ;
+    rdfs:label "Joke Bruijs" ;
+    schema:name "Joke Bruijs" ;
+    musicians:hasCareer career:Joke_Bruijs_career ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 3654 ;
+        oa:end 3665 ;
+        oa:exact "Joke Bruijs"
+    ] .
+
+career:Joke_Bruijs_career a musicians:MusicalCareer ;
+    rdfs:label "Joke Bruijs musical career" ;
+    musicians:hasRole musicians:Singer ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 3639 ;
+        oa:end 3653 ;
+        oa:exact "singer/actress"
+    ] .
+
+band:Rubberen_Robbie a musicians:Band ;
+    rdfs:label "Rubberen Robbie" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 3781 ;
+        oa:end 3796 ;
+        oa:exact "Rubberen Robbie"
+    ] .
+
+person:Peter_Maffay a musicians:Person ;
+    rdfs:label "Peter Maffay" ;
+    schema:name "Peter Maffay" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 4066 ;
+        oa:end 4078 ;
+        oa:exact "Peter Maffay"
+    ] .
+
+person:Gloria_Gaynor a musicians:Person ;
+    rdfs:label "Gloria Gaynor" ;
+    schema:name "Gloria Gaynor" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 4090 ;
+        oa:end 4103 ;
+        oa:exact "Gloria Gaynor"
+    ] .
+
+person:Herman_Brood a musicians:Person ;
+    rdfs:label "Herman Brood" ;
+    schema:name "Herman Brood" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 5053 ;
+        oa:end 5065 ;
+        oa:exact "Herman Brood"
+    ] .
+
+person:Jan_Akkerman a musicians:Person ;
+    rdfs:label "Jan Akkerman" ;
+    schema:name "Jan Akkerman" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 5070 ;
+        oa:end 5082 ;
+        oa:exact "Jan Akkerman"
+    ] .
+
+person:Joe_Bourne a musicians:Person ;
+    rdfs:label "Joe Bourne" ;
+    schema:name "Joe Bourne" ;
+    musicians:hasCareer career:Joe_Bourne_career ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 5255 ;
+        oa:end 5265 ;
+        oa:exact "Joe Bourne"
+    ] .
+
+career:Joe_Bourne_career a musicians:MusicalCareer ;
+    rdfs:label "Joe Bourne musical career" ;
+    musicians:hasRole musicians:Singer ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 5270 ;
+        oa:end 5285 ;
+        oa:exact "American singer"
+    ] .
+
+person:Kenny_Rogers a musicians:Person ;
+    rdfs:label "Kenny Rogers" ;
+    schema:name "Kenny Rogers" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 5574 ;
+        oa:end 5586 ;
+        oa:exact "Kenny Rogers"
+    ] .
+
+person:Pupo a musicians:Person ;
+    rdfs:label "Pupo" ;
+    schema:name "Pupo" ;
+    musicians:hasCareer career:Pupo_career ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 7729 ;
+        oa:end 7733 ;
+        oa:exact "Pupo"
+    ] .
+
+career:Pupo_career a musicians:MusicalCareer ;
+    rdfs:label "Pupo musical career" ;
+    musicians:hasRole musicians:Singer ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 7714 ;
+        oa:end 7728 ;
+        oa:exact "Italian singer"
+    ] .
+
+person:Annie_Dijkstra a musicians:Person ;
+    rdfs:label "Annie Dijkstra" ;
+    schema:name "Annie Dijkstra" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 8065 ;
+        oa:end 8079 ;
+        oa:exact "Annie Dijkstra"
+    ] .
+
+person:Nathalie a musicians:Person ;
+    rdfs:label "Nathalie" ;
+    schema:name "Nathalie" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 8124 ;
+        oa:end 8132 ;
+        oa:exact "Nathalie"
+    ] .
+
+person:Ellen_Wolf a musicians:Person ;
+    rdfs:label "Ellen Wolf" ;
+    schema:name "Ellen Wolf" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 8454 ;
+        oa:end 8464 ;
+        oa:exact "Ellen Wolf"
+    ] .
+
+person:Melvin a musicians:Person ;
+    rdfs:label "Melvin" ;
+    schema:name "Melvin" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 8491 ;
+        oa:end 8497 ;
+        oa:exact "Melvin"
+    ] .
+
+person:Rachel_van_Galen a musicians:Person ;
+    rdfs:label "Rachel van Galen" ;
+    schema:name "Rachel van Galen" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 8649 ;
+        oa:end 8665 ;
+        oa:exact "Rachel van Galen"
+    ] .
+
+person:Roxeanne a musicians:Person ;
+    rdfs:label "Roxeanne" ;
+    schema:name "Roxeanne" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 8770 ;
+        oa:end 8778 ;
+        oa:exact "Roxeanne"
+    ] .
+
+person:Andre_Jr a musicians:Person ;
+    rdfs:label "André Jr." ;
+    schema:name "André Jr." ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 8794 ;
+        oa:end 8803 ;
+        oa:exact "André Jr."
+    ], [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 9090 ;
+        oa:end 9099 ;
+        oa:exact "André Jr."
+    ] .
+
+person:Andre_III a musicians:Person ;
+    rdfs:label "André III" ;
+    schema:name "André III" ;
+    prov:wasGeneratedBy extraction:Andre_Hazes_Wikipedia_Mode2 ;
+    prov:wasDerivedFrom [
+        oa:hasSource source:Andre_Hazes_Wikipedia ;
+        oa:start 9386 ;
+        oa:end 9395 ;
+        oa:exact "André III"
+    ] .
+
+# Gaps:
+# - Songs, albums, chart positions, record labels, certifications, awards,
+#   documentaries, tribute albums, family relationships, and causes of death
+#   are present in the article but are not represented by the supplied ontology.
+# - Genre terms such as levenslied, Nederpop, pop, blues, and rock are not encoded
+#   as genre classes because the supplied musician ontology does not define a genre class.
